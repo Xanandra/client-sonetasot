@@ -4,11 +4,11 @@
             <h1>Campañas activas de vacunación contra Covid-19 (ZMG)</h1>
 
             <div *ngFor="let campana of campanas" id="activa1">
-                <img src="#" alt="{{campana.img}}">
+                <img src="#" alt="personajes">
                 <h4>Personas de {{campana.edades}} </h4>
                 <h4>{{campana.dosis}} Dosis</h4>
                 <h3>{{campana.marca}}</h3>
-                <h4 *ngIf="campana.aplica">Primera dosis aplicada antes del {{campana.aplica}}</h4>
+                <h4 *ngIf="campana.dateDosis != '0000-00-00'">Primera dosis aplicada antes del {{campana.dateDosis}}</h4>
             </div>
         </div>
 
@@ -16,8 +16,8 @@
             <h2>Comenzar ahora</h2>
             <h3>Ingresa tu CURP para agendar una cita o para <a href="#">cancelar una cita</a> ya registrada.</h3>
             <form action="">
-                <input type="text" class="input" placeholder="Ingresa tu CURP">
-                <button>Continuar</button>
+                <input class="input" placeholder="Ingresa tu CURP">
+                <button (click)="addUser()" class="button">Continuar</button>
                 <h5>Si no conoces tu CURP <a href="#">consulta aquí</a></h5>
             </form>
         </div>

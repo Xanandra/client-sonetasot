@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { CampanaService } from 'src/app/service/campana.service';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public campanas: Array<any>;
+  // edades: FormControl = new FormControl('')
+  // dosis: FormControl = new FormControl('')
+  // marca: FormControl = new FormControl('')
+  // dateDosis: FormControl = new FormControl('')
+  // modulo: FormControl = new FormControl('')
+  // domicilio: FormControl = new FormControl('')
+  // municipio: FormControl = new FormControl('')
+  campanas: Array<any> = []
 
-  constructor() { 
-    this.campanas = [
-      {img:'#', edades:'18 y más', dosis:'Primera', marca:'', aplica:''},
-      {img:'#', edades:'18 y más', dosis:'Segunda', marca:'Astra Zenéca', aplica:'15 de Agosto'}
-    ]
-  }
+  constructor(public _campanasService:CampanaService) { }
 
   ngOnInit(): void {
+    this.getCampanas();
+  }
+
+  getCampanas(){
+    this._campanasService.getCampanas().subscribe((campana)=>{
+      return this.campanas = campana
+    })
+  }
+
+  addUser(): void {
+    // let curp = this.curp.value;
   }
 
 }
