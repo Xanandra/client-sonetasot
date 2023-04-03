@@ -15,6 +15,8 @@ export class RegisterComponent implements OnInit {
 
    public curpRC: string = 'Registro!';
 
+   addResult: Array<any> = []
+
   constructor(
     public dataService:DataService, 
     public usuarioService:UsuarioService, 
@@ -26,17 +28,17 @@ export class RegisterComponent implements OnInit {
         priApe: [''],
         segApe: [''],
         fecNac: [''],
-        edad: [''],
+        edad: [0],
         entNac: [''],
         sexo: [''],
-        telCon1: [''],
-        telCon2: [''],
+        telCon1: [0],
+        telCon2: [0],
         email: [''],
         calle: [''],
-        numExt: [''],
+        numExt: [0],
         numInt: [''],
         entFed: [''],
-        codPos: [''],
+        codPos: [0],
         munic: [''],
         colonia: [''],
         folio: [''],
@@ -44,7 +46,7 @@ export class RegisterComponent implements OnInit {
         pNombre: [''],
         pPriApe: [''],
         pSegApe: [''],
-        camp_id: ['']
+        camp_id: [1]
       });
     }
 
@@ -59,7 +61,10 @@ export class RegisterComponent implements OnInit {
     this.formUsers.value.curp = this.curpRC;
     console.log(this.formUsers.value);
 
-    this.usuarioService.addUser(this.formUsers.value).subscribe();
+    this.usuarioService.addUser(this.formUsers.value).subscribe((result)=>{
+      console.log(result);
+      return this.addResult = result
+    });
     
   }
 

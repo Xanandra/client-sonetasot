@@ -17,6 +17,6 @@ export class UsuarioService {
   }
 
   addUser(usersData:Usuario):Observable<any>{
-      return this._http.post(this.URL+"?insertar=1", usersData)
+      return this._http.post<any>(this.URL, usersData)
     }
 }

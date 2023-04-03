@@ -19,7 +19,7 @@
     <label>Fecha de Nacimiento</label>
     <input formControlName="fecNac" type="date" required>
     <label>Edad</label>
-    <input formControlName="edad" type="number" required>
+    <input formControlName="edad" value="{{curpRC}}" type="number" required>
     <label>Entidad de Naciemiento</label>
     <input formControlName="entNac" required>
     <label>Sexo</label>
@@ -32,9 +32,9 @@
     <div id="cont-form">
     <h2>Contacto</h2>
         <label>Teléfon de contacto 1</label>
-        <input formControlName="telCon1" type="tel" required>
+        <input formControlName="telCon1" value="{{curpRC}}" type="tel" required>
         <label>Teléfon de contacto 2</label>
-        <input formControlName="telCon2" type="tel" required>
+        <input formControlName="telCon2" value="{{curpRC}}" type="tel" required>
         <label>Correo Electrónico</label>
         <input formControlName="email" type="email" required>
     </div>
@@ -44,16 +44,16 @@
         <label>Calle</label>
         <input formControlName="calle" type="text" required>
         <label>Número Exterior</label>
-        <input formControlName="numExt" type="number" required>
+        <input formControlName="numExt" value="{{curpRC}}" type="number" required>
         <label>Número Interior (Opcional)</label>
-        <input formControlName="telCon1" type="text" >
+        <input formControlName="numInt" type="text" >
         <label>Entidad Federativa</label>
         <select formControlName="entFed" required>
             <option value="Jalisco">Jalisco</option>
             <option value="Otro">Otro</option>
         </select>
         <label>Código Postal</label>
-        <input formControlName="codPos" type="number" required>
+        <input formControlName="codPos" value="{{curpRC}}" type="number" required>
         <label>Municipio</label>
         <input formControlName="munic" type="text" required>
         <label>Colonia (Opcional)</label>
@@ -74,6 +74,9 @@
         <h2>Folio Mi Vacuna</h2>
         <label>Folio</label>
         <input formControlName="folio" type="number" required>
+        <h2>Folio Mi Vacuna</h2>
+        <label>Campaña</label>
+        <input formControlName="camp_id" value="1" type="number">
         <p>Si no conoces tu folio o aún no te registras en mi vacuna <a href="#">da clic aquí</a></p>
     </div>
 
