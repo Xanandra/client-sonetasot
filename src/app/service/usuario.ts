@@ -1,0 +1,28 @@
+export interface Usuario {
+
+    id:bigint,
+    curp?:string,
+    nombre?:string,
+    priApe?:string,
+    segApe?:string,
+    fecNac?:Date,
+    edad?:number,
+    entNac?:string,
+    sexo?:string,
+    telCon1?:number,
+    telCon2?:number,
+    email?:string,
+    calle?:string,
+    numExt?:number,
+    numInt?:string,
+    entFed?:string,
+    codPos?:number,
+    munic?:string,
+    colonia?:string,
+    folio?:string,
+    fecCit?:Date,
+    pNombre?:string,
+    pPriApe?:string,
+    pSegApe?:string,
+    camp_id?:bigint
+}
