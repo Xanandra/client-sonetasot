@@ -1,0 +1,18 @@
+<div id="municipio">
+    <h1>Campañas activas de vacunación contra Covid-19 (ZMG)</h1>
+    <h1>¿En qué municipio vives?</h1>
+
+    <form class="form" #userForm="ngForm" (ngSubmit)="getMunic()">
+        <p>Municipio</p>
+        <select class="input" name="munic_user" #name="ngModel" [(ngModel)]="municMC" required>
+            <option value="Guadalajara">Guadalajara</option>
+            <option value="Zapopan">Zapopan</option>
+            <option value="Tonalá">Tonalá</option>
+            <option value="Tlaquepaque">Tlaquepaque</option>
+            <option value="Tlajomulco">Tlajomulco</option>
+            <option value="El Salto">El Salto</option>
+        </select>
+
+        <button  type="submit" [disabled]="userForm.invalid" class="button">Continuar</button>
+    </form>
+</div>

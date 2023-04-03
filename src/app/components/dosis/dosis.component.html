@@ -1,0 +1,15 @@
+<div id="dosis">
+    <h1>Campañas activas de vacunación contra Covid-19 (ZMG)</h1>
+
+    <h1>{{municDC}} | Dosis disponibles</h1>
+    <p>Selecciona si es tu primera o segunda dosis por aplicar</p>
+    <div *ngFor="let campana of campanas" class="tipo-dosis" id="activa1">
+        <div *ngIf="campana.municipio == municDC">
+            <img src="#" alt="personajes">
+            <h4>Personas de {{campana.edades}} </h4>
+            <h4>{{campana.dosis}} Dosis</h4>
+            <h3>{{campana.marca}}</h3>
+            <h4 *ngIf="campana.dateDosis != '0000-00-00'">Primera dosis aplicada antes del {{campana.dateDosis}}</h4>
+        </div>
+    </div>
+</div>

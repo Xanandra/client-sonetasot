@@ -9,7 +9,9 @@ import { HomeComponent } from './components/home/home.component';
 import { CompleteComponent } from './components/complete/complete.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RegisterComponent } from './components/register/register.component'
+import { RegisterComponent } from './components/register/register.component';
+import { MunicipioComponent } from './components/municipio/municipio.component';
+import { DosisComponent } from './components/dosis/dosis.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { RegisterComponent } from './components/register/register.component'
     FooterComponent,
     HomeComponent,
     CompleteComponent,
-    RegisterComponent
+    RegisterComponent,
+    MunicipioComponent,
+    DosisComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   formUsers:FormGroup;
 
    public curpRC: string = 'Registro!';
+   public municRC: string = 'Registro!';
 
    addResult: Array<any> = []
 
@@ -51,9 +52,15 @@ export class RegisterComponent implements OnInit {
     }
 
   ngOnInit(): void {
+
      this.dataService.curpEvent$.subscribe(curpServ => {
       this.curpRC = curpServ;
       console.log(' CURP: ', curpServ);
+     })
+
+     this.dataService.municEvent$.subscribe(municServ => {
+      this.municRC = municServ;
+      console.log(' Municipio: ', municServ);
      })
   }
 

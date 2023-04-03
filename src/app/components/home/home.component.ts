@@ -13,21 +13,22 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 
 export class HomeComponent implements OnInit {
   
-   curp: string = ''
+  curp: string = ''
 
   campanas: Array<any> = []
-  selection: any;
-  
   
 
-  constructor(public _campanasService:CampanaService, public _usuariosService:UsuarioService, public router:Router, public _dataService:DataService) { }
+  constructor(public campanasService:CampanaService, 
+    public usuariosService:UsuarioService, 
+    public router:Router, 
+    public dataService:DataService) { }
 
   ngOnInit(): void {
     this.getCampanas();
   }
 
   getCampanas(){
-    this._campanasService.getCampanas().subscribe((campana)=>{
+    this.campanasService.getCampanas().subscribe((campana)=>{
       return this.campanas = campana
     })
   }
@@ -40,7 +41,7 @@ export class HomeComponent implements OnInit {
 
    getCurp(): void {
     console.log(this.curp)
-    this._dataService.curpEvent$.emit(this.curp);
+    this.dataService.curpEvent$.emit(this.curp);
     //this.router.navigate(['/register'])
    }
 
