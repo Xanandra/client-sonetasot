@@ -1,0 +1,146 @@
+body {
+  background-color: white;
+  font-family: "Nutmeg", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  color: rgb(9, 33, 139);
+}
+
+h2 {
+  font-size: 40px;
+  color: rgb(111, 197, 255);
+}
+
+h3 {
+  font-size: 30px;
+  margin: 1%;
+  color: rgb(255, 150, 14);
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 18px;
+  margin: 1%;
+  line-height: 20px;
+  color: rgb(9, 33, 139);
+}
+h4 span {
+  color: rgb(111, 197, 255);
+  font-style: italic;
+}
+
+h5 {
+  font-size: 25px;
+  color: #666;
+}
+
+h6 {
+  font-size: 25px;
+  color: #666;
+}
+
+a {
+  color: rgb(111, 197, 255);
+}
+
+hr {
+  border: 1px #ccc solid;
+}
+
+p {
+  font-size: 18px;
+  color: #666;
+}
+p a {
+  font-style: normal;
+  font-weight: bold;
+}
+
+#header {
+  width: 80%;
+  margin: 0 10%;
+  display: inline-block;
+}
+#header img {
+  margin: 0px 2%;
+}
+#header #img-jal {
+  margin-bottom: 15px;
+}
+#header #menu {
+  width: 30%;
+  line-height: 50px;
+  float: right;
+}
+#header #menu h4 {
+  width: 40%;
+  margin: 0px;
+  display: inline-block;
+}
+#header #menu h4 a {
+  text-decoration: none;
+}
+
+#home {
+  width: 75%;
+  margin: 0 auto;
+  border: 2px #ccc solid;
+  border-radius: 30px;
+}
+#home .registro {
+  width: 60%;
+  margin: 0 auto;
+}
+#home .registro #campana {
+  display: flex;
+}
+#home .registro #campana #activa {
+  display: flex;
+  width: 42%;
+  height: 300px;
+  margin: 0 1.5%;
+  padding: 1% 2%;
+  display: inline-block;
+  border: 1px #ccc solid;
+  border-radius: 20px;
+}
+#home .registro input {
+  border: 2px #ccc solid;
+  border-radius: 5px;
+  font-size: 30px;
+  color: #ccc;
+  text-align: center;
+  padding: 1% 5%;
+}
+#home .registro button {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(9, 33, 139);
+  font-size: 20px;
+  color: #fff;
+  padding: 2% 8%;
+  margin-left: 15%;
+}
+#home .registro .info-tel {
+  width: 10%;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(111, 197, 255);
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+}
+#home .registro .info-tel a {
+  color: #fff;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */
