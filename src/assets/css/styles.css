@@ -60,18 +60,18 @@ p a {
 }
 
 #header {
-  width: 80%;
-  margin: 0 10%;
+  width: 100%;
   display: inline-block;
 }
 #header img {
+  width: 10%;
   margin: 0px 2%;
 }
 #header #img-jal {
   margin-bottom: 15px;
 }
 #header #menu {
-  width: 30%;
+  width: 35%;
   line-height: 50px;
   float: right;
 }
@@ -90,15 +90,11 @@ p a {
   border: 2px #ccc solid;
   border-radius: 30px;
 }
-#home .registro {
+#home .inicio {
   width: 60%;
   margin: 0 auto;
 }
-#home .registro #campana {
-  display: flex;
-}
-#home .registro #campana #activa {
-  display: flex;
+#home .inicio #campana #activa {
   width: 42%;
   height: 300px;
   margin: 0 1.5%;
@@ -107,7 +103,7 @@ p a {
   border: 1px #ccc solid;
   border-radius: 20px;
 }
-#home .registro input {
+#home .inicio input {
   border: 2px #ccc solid;
   border-radius: 5px;
   font-size: 30px;
@@ -115,7 +111,7 @@ p a {
   text-align: center;
   padding: 1% 5%;
 }
-#home .registro button {
+#home .inicio button {
   border: none;
   border-radius: 10px;
   background-color: rgb(9, 33, 139);
@@ -124,7 +120,7 @@ p a {
   padding: 2% 8%;
   margin-left: 15%;
 }
-#home .registro .info-tel {
+#home .inicio .info-tel {
   width: 10%;
   position: fixed;
   top: 20px;
@@ -136,11 +132,11 @@ p a {
   line-height: 40px;
   font-size: 18px;
 }
-#home .registro .info-tel a {
+#home .inicio .info-tel a {
   color: #fff;
   text-decoration: none;
   font-style: normal;
   font-weight: bold;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styles.css.map */
