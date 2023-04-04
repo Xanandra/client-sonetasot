@@ -8,6 +8,9 @@ h1 {
   font-size: 40px;
   color: rgb(9, 33, 139);
 }
+h1 span {
+  color: #666;
+}
 
 h2 {
   font-size: 40px;
@@ -38,8 +41,9 @@ h5 {
 }
 
 h6 {
-  font-size: 25px;
+  font-size: 18px;
   color: #666;
+  margin-bottom: 2%;
 }
 
 a {
@@ -47,7 +51,7 @@ a {
 }
 
 hr {
-  border: 1px #ccc solid;
+  border: 1px #eee solid;
 }
 
 p {
@@ -84,17 +88,25 @@ p a {
   text-decoration: none;
 }
 
-#home {
+.content {
   width: 75%;
   margin: 0 auto;
+  padding-bottom: 3%;
   border: 2px #ccc solid;
   border-radius: 30px;
 }
-#home .inicio {
+.content .center {
+  text-align: center;
+}
+.content .inicio {
   width: 60%;
   margin: 0 auto;
 }
-#home .inicio #campana #activa {
+.content .inicio #campana {
+  display: flex;
+}
+.content .inicio #campana #activa {
+  display: flex;
   width: 42%;
   height: 300px;
   margin: 0 1.5%;
@@ -103,7 +115,7 @@ p a {
   border: 1px #ccc solid;
   border-radius: 20px;
 }
-#home .inicio input {
+.content .inicio input {
   border: 2px #ccc solid;
   border-radius: 5px;
   font-size: 30px;
@@ -111,16 +123,37 @@ p a {
   text-align: center;
   padding: 1% 5%;
 }
-#home .inicio button {
+.content .inicio select {
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ccc;
+  line-height: 1.3;
+  padding: 0.4em 1.4em 0.3em 0.8em;
+  width: 400px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 20px auto;
+  border: 1px solid #666;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.03);
+  border-radius: 0.3em;
+  background-color: white;
+}
+.content .inicio button {
   border: none;
   border-radius: 10px;
-  background-color: rgb(9, 33, 139);
   font-size: 20px;
-  color: #fff;
+  color: white;
   padding: 2% 8%;
   margin-left: 15%;
 }
-#home .inicio .info-tel {
+.content .inicio .button {
+  background-color: rgb(9, 33, 139);
+}
+.content .inicio .button-dis {
+  background-color: #ccc;
+}
+.content .inicio .info-tel {
   width: 10%;
   position: fixed;
   top: 20px;
@@ -132,11 +165,30 @@ p a {
   line-height: 40px;
   font-size: 18px;
 }
-#home .inicio .info-tel a {
-  color: #fff;
+.content .inicio .info-tel a {
+  color: white;
   text-decoration: none;
   font-style: normal;
   font-weight: bold;
+}
+.content .inicio #municipio {
+  width: 50%;
+  margin: 0px auto;
+}
+.content .inicio #num-dosis {
+  display: flex;
+}
+.content .inicio #num-dosis .pri-dosis {
+  width: 350px;
+  max-width: 50%;
+  margin: 0 auto;
+  padding-bottom: 3%;
+  border: 2px #ccc solid;
+  border-radius: 30px;
+  text-align: center;
+}
+.content .inicio #num-dosis #disabled {
+  color: #666 !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

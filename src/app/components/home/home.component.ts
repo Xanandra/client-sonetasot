@@ -17,6 +17,12 @@ export class HomeComponent implements OnInit {
 
   campanas: Array<any> = []
   
+  personas = [
+    {edad: "18 y más", img: "./assets/image/per-18.png"},
+    {edad: "Adultos mayores", img: "./assets/image/per-may.png"},
+    {edad: "12 a 17 años", img: "./assets/image/per-nin.png"},
+    {edad: "embarazadas", img: "./assets/image/per-emb.png"},
+  ];
 
   constructor(public campanasService:CampanaService, 
     public usuariosService:UsuarioService, 

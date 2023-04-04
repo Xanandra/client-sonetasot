@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-  URL = "http://localhost/server/usuarios.php/";
+  URL = "http://localhost/server-sonetasot/usuarios.php/";
 
   constructor(private _http:HttpClient) { }
 

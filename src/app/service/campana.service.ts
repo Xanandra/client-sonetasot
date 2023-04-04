@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CampanaService {
 
-  URL = "http://localhost/server/campanas.php";
+  URL = "http://localhost/server-sonetasot/campanas.php";
 
   constructor(private _http:HttpClient) { }
 

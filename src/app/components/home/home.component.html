@@ -1,12 +1,16 @@
-<div id="home">
+<div class="content">
     <div class="inicio">
+        <h1>Campañas activas de vacunación contra Covid-19 (ZMG)</h1>
         <div id="campana">
-            <h1>Campañas activas de vacunación contra Covid-19 (ZMG)</h1>
 
-            <div *ngFor="let campana of campanas" id="activa1">
-                <img src="#" alt="personajes">
+            <div *ngFor="let campana of campanas" id="activa">
+                <div *ngFor="let persona of personas">
+                    <div *ngIf="campana.edades == persona.edad">
+                        <img src="{{persona.img}}" alt="personajes">
+                    </div>
+                </div>
                 <h4>Personas de {{campana.edades}} </h4>
-                <h4>{{campana.dosis}} Dosis</h4>
+                <h4><span>{{campana.dosis}} Dosis</span></h4>
                 <h3>{{campana.marca}}</h3>
                 <h4 *ngIf="campana.dateDosis != '0000-00-00'">Primera dosis aplicada antes del {{campana.dateDosis}}</h4>
             </div>
@@ -14,7 +18,7 @@
 
         <div id="agendar">
             <h2>Comenzar ahora</h2>
-            <h3>Ingresa tu CURP para agendar una cita o para <a href="#">cancelar una cita</a> ya registrada.</h3>
+            <h5>Ingresa tu CURP para agendar una cita o paracancelar una cita ya registrada.</h5>
             <form class="form" #userForm="ngForm" (ngSubmit)="getCurp()">
                 <input  type="text" class="input" id="curp"  name="user_curp" #name="ngModel" [(ngModel)]="curp" 
                 required pattern="[0-9]{10}" placeholder="Ingresa tu CURP">
@@ -27,14 +31,15 @@
             <a href="33 3823 3220" class="button">33 3823 3220</a>
         </div>
     </div>
+</div>
 
-    <div class="municipio">
-        <app-municipio></app-municipio>
-    </div>
-    <div class="dosis">
-        <app-dosis></app-dosis>
-    </div>
-    <div class="registro">
-        <app-register></app-register>
-    </div>
+
+<div class="content">
+    <app-municipio></app-municipio>
+</div>
+<div class="content">
+    <app-dosis></app-dosis>
+</div>
+<div class="content">
+    <app-register></app-register>
 </div>

@@ -1,3 +1,9 @@
+$c-marin: rgb(9, 33, 139);
+$c-azul: rgb(111, 197, 255);
+$c-naran: rgb(255, 150, 14);
+$c-gris: #666;
+$c-beige: #ccc;
+
 body{
     background-color: white;
     font-family: "Nutmeg",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
@@ -6,18 +12,21 @@ body{
 h1{
     text-align: center;
     font-size: 40px;
-    color: rgb(9, 33, 139);
+    color: $c-marin;
+    span{
+        color: $c-gris;
+    }
 }
 
 h2{
     font-size: 40px;
-    color: rgb(111, 197, 255);
+    color: $c-azul;
 }
 
 h3{
     font-size: 30px;
     margin: 1%;
-    color: rgb(255, 150, 14);
+    color: $c-naran;
     text-transform: uppercase;
 }
 
@@ -25,35 +34,37 @@ h4{
     font-size: 18px;
     margin: 1%;
     line-height: 20px;
-    color: rgb(9, 33, 139);
+    color: $c-marin;
 
     span{
-        color: rgb(111, 197, 255);
+        color: $c-azul;
         font-style: italic;
     }
 }
 
 h5{
     font-size: 25px;
-    color: #666;
+    color: $c-gris;
 }
 
 h6{
-    font-size: 25px;
-    color: #666;
+    font-size: 18px;
+    color: $c-gris;
+    margin-bottom: 2%;
+
 }
 
 a{
-    color: rgb(111, 197, 255);
+    color: $c-azul
 }
 
 hr{
-    border: 1px #ccc solid
+    border: 1px #eee solid
 }
 
 p{
     font-size: 18px;
-    color: #666;
+    color: $c-gris;
     a{
         font-style: normal;
         font-weight: bold;
@@ -89,49 +100,80 @@ p{
     }
 }
 
-#home{
+.content{
     width: 75%;
     margin: 0 auto;
-    border: 2px #ccc solid;
+    padding-bottom: 3%;
+    border: 2px $c-beige solid;
     border-radius: 30px;
+    
+    .center{
+        text-align: center;
+    }
+    
 
     .inicio{
         width: 60%;
         margin: 0 auto;
 
         #campana{
-            // display: flex;
+            display: flex;
 
             #activa{
-                // display: flex;
+                display: flex;
                 width: 42%;
                 height: 300px;
                 margin: 0 1.5%;
                 padding: 1% 2%;
                 display: inline-block;
-                border: 1px #ccc solid;
+                border: 1px $c-beige solid;
                 border-radius: 20px;
             }
         }
 
         input{
-            border: 2px #ccc solid;
+            border: 2px $c-beige solid;
             border-radius: 5px;
             font-size: 30px;
-            color: #ccc;
+            color: $c-beige;
             text-align: center;
             padding: 1% 5%;
+        }
+
+        select{
+            display: block;
+            font-size: 18px;
+            font-weight: 400;
+            color: $c-beige;
+            line-height: 1.3;
+            padding: .4em 1.4em .3em .8em;
+            width: 400px;
+            max-width: 100%; 
+            box-sizing: border-box;
+            margin: 20px auto;
+            border: 1px solid $c-gris;
+            box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+            border-radius: .3em;
+            background-color: white;
         }
 
         button{
             border: none;
             border-radius: 10px;
-            background-color: rgb(9, 33, 139);
             font-size: 20px;
-            color: #fff;
+            color: white;
             padding: 2% 8%;
             margin-left: 15%;
         }
+
+        .button{
+            background-color: $c-marin;
+        }
+
+        .button-dis{
+            background-color: $c-beige;
+        }
+
 
         .info-tel{
             width: 10%;
@@ -140,16 +182,39 @@ p{
             right:20px;
             border: none;
             border-radius: 20px;
-            background-color: rgb(111, 197, 255);
+            background-color: $c-azul;
             text-align: center;
             line-height: 40px;
             font-size: 18px;
             
             a{
-                color: #fff;
+                color: white;
                 text-decoration: none;
                 font-style: normal;
                 font-weight: bold;
+            }
+        }
+
+        #municipio{
+            width: 50%;
+            margin: 0px auto;
+        }
+
+        #num-dosis{
+            display: flex;
+
+            .pri-dosis{
+                width: 350px;
+                max-width: 50%;
+                margin: 0 auto;
+                padding-bottom: 3%;
+                border: 2px $c-beige solid;
+                border-radius: 30px;
+                text-align: center;
+            }
+            
+            #disabled{
+                color: $c-gris !important;
             }
         }
 

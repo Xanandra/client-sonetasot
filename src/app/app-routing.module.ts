@@ -7,7 +7,7 @@ import { MunicipioComponent } from './components/municipio/municipio.component';
 import { DosisComponent } from './components/dosis/dosis.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'complete', component: CompleteComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'municipio', component: MunicipioComponent},
