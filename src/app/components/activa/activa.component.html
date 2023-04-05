@@ -1,0 +1,20 @@
+<div class="inicio">
+    <div id="campana">
+        <div id="activa">
+            <div *ngFor="let campana of campanas" class="tipo-dosis">
+                <div *ngIf="campana.municipio == municDC">
+                    <div *ngFor="let persona of personas">
+                        <div *ngIf="campana.edades == persona.edad">
+                            <img src="{{persona.img}}" alt="personajes">
+                        </div>
+                    </div>
+                    <h4>Personas de {{campana.edades}} </h4>
+                    <h4><span>{{campana.dosis}} Dosis</span></h4>
+                    <h3>{{campana.marca}}</h3>
+                    <h4 *ngIf="campana.dateDosis != '0000-00-00'">Primera dosis aplicada antes del {{campana.dateDosis}}</h4>
+                    <h3>{{campana.municipio}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

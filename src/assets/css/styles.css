@@ -109,7 +109,7 @@ p a {
   display: flex;
   width: 42%;
   height: 300px;
-  margin: 0 1.5%;
+  margin: 0 auto;
   padding: 1% 2%;
   display: inline-block;
   border: 1px #ccc solid;
@@ -119,9 +119,11 @@ p a {
   border: 2px #ccc solid;
   border-radius: 5px;
   font-size: 30px;
-  color: #ccc;
   text-align: center;
   padding: 1% 5%;
+}
+.content .inicio input::placeholder {
+  color: #666;
 }
 .content .inicio select {
   display: block;
@@ -178,17 +180,21 @@ p a {
 .content .inicio #num-dosis {
   display: flex;
 }
-.content .inicio #num-dosis .pri-dosis {
+.content .inicio #num-dosis .abl-dosis, .content .inicio #num-dosis .dis-dosis {
   width: 350px;
-  max-width: 50%;
-  margin: 0 auto;
+  max-width: 100%;
   padding-bottom: 3%;
   border: 2px #ccc solid;
   border-radius: 30px;
   text-align: center;
+  cursor: pointer;
 }
-.content .inicio #num-dosis #disabled {
-  color: #666 !important;
+.content .inicio #num-dosis .dis-dosis {
+  background-color: #f1f1f1;
+  cursor: context-menu;
+}
+.content .inicio #num-dosis .dis-dosis h1 {
+  color: #666;
 }
 
 /*# sourceMappingURL=styles.css.map */

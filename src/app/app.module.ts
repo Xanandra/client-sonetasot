@@ -11,7 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
 import { MunicipioComponent } from './components/municipio/municipio.component';
-import { DosisComponent } from './components/dosis/dosis.component'
+import { DosisComponent } from './components/dosis/dosis.component';
+import { ActivaComponent } from './components/activa/activa.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DosisComponent } from './components/dosis/dosis.component'
     CompleteComponent,
     RegisterComponent,
     MunicipioComponent,
-    DosisComponent
+    DosisComponent,
+    ActivaComponent
   ],
   imports: [
     BrowserModule,

@@ -123,7 +123,7 @@ p{
                 display: flex;
                 width: 42%;
                 height: 300px;
-                margin: 0 1.5%;
+                margin: 0 auto;
                 padding: 1% 2%;
                 display: inline-block;
                 border: 1px $c-beige solid;
@@ -135,9 +135,12 @@ p{
             border: 2px $c-beige solid;
             border-radius: 5px;
             font-size: 30px;
-            color: $c-beige;
             text-align: center;
             padding: 1% 5%;
+        }
+
+        input::placeholder{
+            color: $c-gris;
         }
 
         select{
@@ -203,19 +206,24 @@ p{
         #num-dosis{
             display: flex;
 
-            .pri-dosis{
+            .abl-dosis, .dis-dosis{
                 width: 350px;
-                max-width: 50%;
-                margin: 0 auto;
+                max-width: 100%;
                 padding-bottom: 3%;
                 border: 2px $c-beige solid;
                 border-radius: 30px;
                 text-align: center;
+                cursor: pointer;
             }
             
-            #disabled{
-                color: $c-gris !important;
+            .dis-dosis{
+                background-color: #f1f1f1;
+                cursor: context-menu;
+                h1{
+                    color: $c-gris;
+                }
             }
+            
         }
 
     }
