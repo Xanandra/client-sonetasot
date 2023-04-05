@@ -18,7 +18,7 @@
 
         <div id="agendar">
             <h2>Comenzar ahora</h2>
-            <h5>Ingresa tu CURP para agendar una cita o paracancelar una cita ya registrada.</h5>
+            <h5>Ingresa tu CURP para agendar una cita o para cancelar una cita ya registrada.</h5>
             <form class="form" #userForm="ngForm" (ngSubmit)="getCurp()">
                 <input  type="text" class="input" id="curp"  name="user_curp" #name="ngModel" [(ngModel)]="curp" 
                 required pattern="[0-9]{10}" placeholder="Ingresa tu CURP">
@@ -38,6 +38,6 @@
 
     <app-activa></app-activa>
 
-    <app-register></app-register>
-
 </div>
+
+<app-register></app-register>

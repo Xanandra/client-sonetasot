@@ -12,7 +12,6 @@ export class ActivaComponent implements OnInit {
   public municDC: string = 'Registro!';
 
   campanas: Array<any> = []
-
     
   personas = [
     {edad: "18 y más", img: "./assets/image/per-18.png"},

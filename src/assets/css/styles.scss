@@ -2,6 +2,7 @@ $c-marin: rgb(9, 33, 139);
 $c-azul: rgb(111, 197, 255);
 $c-naran: rgb(255, 150, 14);
 $c-gris: #666;
+$c-lgris: #f1f1f1;
 $c-beige: #ccc;
 
 body{
@@ -45,7 +46,8 @@ h4{
 h5{
     font-size: 25px;
     color: $c-gris;
-}
+    margin: 0px;
+} 
 
 h6{
     font-size: 18px;
@@ -69,6 +71,24 @@ p{
         font-style: normal;
         font-weight: bold;
     }
+}
+
+
+button{
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    padding: 2% 8%;
+    margin:0px 7%;
+}
+
+.button{
+    background-color: $c-marin;
+}
+
+.button-dis{
+    background-color: $c-beige;
 }
 
 #header{
@@ -132,11 +152,13 @@ p{
         }
 
         input{
+            width: 50%;
             border: 2px $c-beige solid;
             border-radius: 5px;
             font-size: 30px;
             text-align: center;
             padding: 1% 5%;
+            margin: 3% 0px;
         }
 
         input::placeholder{
@@ -160,28 +182,10 @@ p{
             background-color: white;
         }
 
-        button{
-            border: none;
-            border-radius: 10px;
-            font-size: 20px;
-            color: white;
-            padding: 2% 8%;
-            margin-left: 15%;
-        }
-
-        .button{
-            background-color: $c-marin;
-        }
-
-        .button-dis{
-            background-color: $c-beige;
-        }
-
-
         .info-tel{
             width: 10%;
             position: fixed;
-            top: 20px;
+            top: 90px;
             right:20px;
             border: none;
             border-radius: 20px;
@@ -191,6 +195,7 @@ p{
             font-size: 18px;
             
             a{
+                background-color: $c-azul;
                 color: white;
                 text-decoration: none;
                 font-style: normal;
@@ -217,7 +222,7 @@ p{
             }
             
             .dis-dosis{
-                background-color: #f1f1f1;
+                background-color: $c-lgris;
                 cursor: context-menu;
                 h1{
                     color: $c-gris;
@@ -226,5 +231,61 @@ p{
             
         }
 
+    }
+
+}
+
+.registro{
+    width: 75%;
+    margin: 2% auto;
+    padding-bottom: 3%;
+
+    #curp-rc{
+        width: 40%;
+        padding: 0.5% 2%;
+        border: none;
+        border-radius: 20px;
+        background-color: $c-beige;
+        line-height: 40px;
+
+        h5{
+            font-size: 18px;
+        }
+    }
+
+    .formulario{
+
+        label{
+            font-size: 18px;
+            color: $c-gris;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        input, select{
+            display: block;
+            width: 220px;
+            max-width: 100%; 
+            background-color: $c-lgris;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.3;
+            padding: .4em 1.4em .3em .8em;
+            box-sizing: border-box;
+            margin: 1%;
+            border: none;
+            box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+            border-radius: .3em;
+        }
+    }
+}
+
+#footer{
+    width: 100%;
+    max-width: 100%;
+
+    img{
+        width: 10%;
+        margin: 0px 2%;
     }
 }

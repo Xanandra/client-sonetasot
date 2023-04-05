@@ -1,85 +1,124 @@
-<h3>CURP: {{dataService.curpEvent$ | async}} </h3>
+<div class="registro">
+    <div id="curp-rc"><h5>CURP: {{dataService.curpEvent$ | async}} </h5></div>
+    
+    <h1>Registro para Vacunación</h1>
+    
+    <p>
+        Es importante verifiques la información que se presenta a continuación, corresponde a la CURP que estas 
+        solicitando y que coincide con los datos proporcionados
+    </p>
+    
+    <form [formGroup]="formUsers" (ngSubmit)="addUser()" class="formulario">
+        <table>
+            <div>
+                <tr>
+                    <td><label>CURP</label></td>
+                    <td><label>Nombre</label></td>
+                    <td><label>Primer Apellido</label></td>
+                    <td><label>Segundo Apellido</label></td>
+                </tr>
+                <tr>
+                    <td><input type="number" value="{{curpRC}}" formControlName="curp" readonly></td>
+                    <td><input formControlName="nombre" type="text" required></td>
+                    <td><input formControlName="priApe" type="text" required></td>
+                    <td><input formControlName="segApe" type="text" required></td>
+                </tr>
+                <tr>
+                    <td><label>Fecha de Nacimiento</label></td>
+                    <td><label>Edad</label></td>
+                    <td><label>Entidad de Naciemiento</label></td>
+                    <td><label>Sexo</label></td>
+                </tr>
+                <tr>
+                    <td><input formControlName="fecNac" type="date" required></td>
+                    <td><input formControlName="edad" value="{{curpRC}}" type="number" required></td>
+                    <td><input formControlName="entNac" required></td>
+                    <td><select formControlName="sexo" required>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select></td>
+                </tr>
+            </div>
+            
 
-<h1>Registro para Vacunación</h1>
+            <div id="cont-form">
+                <h2>Contacto</h2>
+                <tr>
+                    <td><label>Teléfono de contacto 1</label></td>
+                    <td><label>Teléfono de contacto 2</label></td>
+                    <td><label>Correo Electrónico</label></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input formControlName="telCon1" value="{{curpRC}}" type="tel" required></td>
+                    <td><input formControlName="telCon2" value="{{curpRC}}" type="tel" required></td>
+                    <td><input formControlName="email" type="email" required></td>
+                    <td></td>
+                </tr>
+            </div>
 
-<p>
-    Es importante verifiques la información que se presenta a continuación, corresponde a la CURP que estas 
-    solicitando y que coincide con los datos proporcionados
-</p>
+            <div id="ubic-form">
+                <h2>Ubicación</h2>
+                <tr>
+                    <td colspan="2"><label>Calle</label></td>
+                    <td><label>Número Exterior</label></td>
+                    <td><label>Número Interior (Opcional)</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input formControlName="calle" type="text" required></td>
+                    <td><input formControlName="numExt" value="{{curpRC}}" type="number" required></td>
+                    <td><input formControlName="numInt" type="text" ></td>
+                </tr>
+                <tr>
+                    <td><label>Entidad Federativa</label></td>
+                    <td><label>Código Postal</label></td>
+                    <td><label>Municipio</label></td>
+                    <td><label>Colonia (Opcional)</label></td>
+                </tr>
+                <tr>
+                    <td><input formControlName="calle" type="text" required></td>
+                    <td><input formControlName="codPos" value="{{curpRC}}" type="number" required></td>
+                    <td><input value="{{municRC}}" formControlName="munic" type="text" required></td>
+                    <td><input formControlName="colonia" type="text"></td>
+                </tr>
+            </div>
 
-<form [formGroup]="formUsers" (ngSubmit)="addUser()" class="formulario">
-    <label>CURP</label>
-    <input type="number" value="{{curpRC}}" formControlName="curp" readonly>
-    <label>Nombre</label>
-    <input formControlName="nombre" type="text" required>
-    <label>Primer Apellido</label>
-    <input formControlName="priApe" type="text" required>
-    <label>Segundo Apellido</label>
-    <input formControlName="segApe" type="text" required>
-    <label>Fecha de Nacimiento</label>
-    <input formControlName="fecNac" type="date" required>
-    <label>Edad</label>
-    <input formControlName="edad" value="{{curpRC}}" type="number" required>
-    <label>Entidad de Naciemiento</label>
-    <input formControlName="entNac" required>
-    <label>Sexo</label>
-    <select formControlName="sexo" required>
-        <option value="Masculino">Masculino</option>
-        <option value="Femenino">Femenino</option>
-        <option value="Otro">Otro</option>
-    </select>
+            <div id="pad-form">
+                <h2>Datos del padre o tutor</h2>
+                <tr>
+                    <td><label>Nombre</label></td>
+                    <td><label>Primer Apellido</label></td>
+                    <td><label>Segundo Apellido</label></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input formControlName="pNombre" type="text"></td>
+                    <td><input formControlName="pPriApe" type="text"></td>
+                    <td><input formControlName="pSegApe" type="text"></td>
+                    <td></td>
+                </tr>
+            </div>
 
-    <div id="cont-form">
-    <h2>Contacto</h2>
-        <label>Teléfon de contacto 1</label>
-        <input formControlName="telCon1" value="{{curpRC}}" type="tel" required>
-        <label>Teléfon de contacto 2</label>
-        <input formControlName="telCon2" value="{{curpRC}}" type="tel" required>
-        <label>Correo Electrónico</label>
-        <input formControlName="email" type="email" required>
-    </div>
-
-    <div id="ubic-form">
-    <h2>Contacto</h2>
-        <label>Calle</label>
-        <input formControlName="calle" type="text" required>
-        <label>Número Exterior</label>
-        <input formControlName="numExt" value="{{curpRC}}" type="number" required>
-        <label>Número Interior (Opcional)</label>
-        <input formControlName="numInt" type="text" >
-        <label>Entidad Federativa</label>
-        <select formControlName="entFed" required>
-            <option value="Jalisco">Jalisco</option>
-            <option value="Otro">Otro</option>
-        </select>
-        <label>Código Postal</label>
-        <input formControlName="codPos" value="{{curpRC}}" type="number" required>
-        <label>Municipio</label>
-        <input value="{{municRC}}" formControlName="munic" type="text" required>
-        <label>Colonia (Opcional)</label>
-        <input formControlName="colonia" type="text">
-    </div>
-
-    <div id="pad-form">
-        <h2>Datos del padre o tutor</h2>
-        <label>Nombre</label>
-        <input formControlName="pNombre" type="text">
-        <label>Primer Apellido</label>
-        <input formControlName="pPriApe" type="text">
-        <label>Segundo Apellido</label>
-        <input formControlName="pSegApe" type="text">
-    </div>
-
-    <div id="fol-form">
-        <h2>Folio Mi Vacuna</h2>
-        <label>Folio</label>
-        <input formControlName="folio" type="number" required>
-        <h2>Folio Mi Vacuna</h2>
-        <label>Campaña</label>
-        <input formControlName="camp_id" value="1" type="number">
-        <p>Si no conoces tu folio o aún no te registras en mi vacuna <a href="#">da clic aquí</a></p>
-    </div>
-
-    <button> Cancelar </button>
-    <button type="submit"> Continuar </button>
-</form>
+                
+            <div id="fol-form">
+                <h2>Folio Mi Vacuna</h2>
+                
+                <tr>
+                    <td><label>Nombre</label></td>
+                    <td><label>Campaña</label></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input formControlName="folio" type="number" required></td>
+                    <td><input formControlName="camp_id" value="1" type="number"></td>
+                    <td><p>Si no conoces tu folio o aún no te registras en mi vacuna <a href="#">da clic aquí</a></p></td>
+                </tr>
+                
+            </div>
+        </table>
+        
+        <button class="button-dis"> Cancelar </button>
+        <button class="button" type="submit"> Continuar </button>
+    </form>
+</div>
