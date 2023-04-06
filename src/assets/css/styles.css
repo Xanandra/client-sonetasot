@@ -70,7 +70,6 @@ button {
   font-size: 20px;
   color: white;
   padding: 2% 8%;
-  margin: 0px 7%;
 }
 
 .button {
@@ -133,6 +132,15 @@ button {
   border: 1px #ccc solid;
   border-radius: 20px;
 }
+.content .inicio #agendar .o-button {
+  background: rgb(9, 33, 139);
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+  padding: 2% 8%;
+  margin-left: 12%;
+}
 .content .inicio input {
   width: 50%;
   border: 2px #ccc solid;
@@ -180,6 +188,9 @@ button {
   font-style: normal;
   font-weight: bold;
 }
+.content .inicio .form .button, .content .inicio .form .button-dis {
+  margin: 0px 12%;
+}
 .content .inicio #municipio {
   width: 50%;
   margin: 0px auto;
@@ -190,6 +201,7 @@ button {
 .content .inicio #num-dosis .abl-dosis, .content .inicio #num-dosis .dis-dosis {
   width: 350px;
   max-width: 100%;
+  margin: 5%;
   padding-bottom: 3%;
   border: 2px #ccc solid;
   border-radius: 30px;
@@ -220,6 +232,13 @@ button {
 .registro #curp-rc h5 {
   font-size: 18px;
 }
+.registro .formulario table {
+  width: 100%;
+  margin: 0px auto;
+}
+.registro .formulario table tr td {
+  width: 27%;
+}
 .registro .formulario label {
   font-size: 18px;
   color: #666;
@@ -228,7 +247,7 @@ button {
 }
 .registro .formulario input, .registro .formulario select {
   display: block;
-  width: 220px;
+  width: 100%;
   max-width: 100%;
   background-color: #f1f1f1;
   font-size: 18px;
@@ -240,6 +259,9 @@ button {
   border: none;
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.03);
   border-radius: 0.3em;
+}
+.registro .button, .registro .button-dis {
+  margin: 0px 12%;
 }
 
 #footer {
