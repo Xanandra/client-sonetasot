@@ -1,5 +1,24 @@
-<div class="registro">
-    <div id="curp-rc"><h5>CURP: {{dataService.curpEvent$ | async}} </h5></div>
+<div id="registro">
+
+    <div id="head-reg">
+        <div id="curp-rc"><h5>CURP: {{dataService.curpEvent$ | async}}</h5></div>
+    
+        <div id="campana">
+            <div *ngFor="let campana of campanas" id="activa">
+                <div *ngIf="campana.id == campaIdRC">
+                    <div *ngFor="let persona of personas">
+                        <div *ngIf="campana.edades == persona.edad" id="der">
+                            <img src="{{persona.img}}" alt="personajes">
+                        </div>
+                    </div>
+                    <p>Campaña</p>
+                    <p>{{campana.municipio}} / <span>{{campana.dosis}} dosis</span></p>
+                    <p><b>Personas de </b> <strong>{{campana.edades}}</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
     
     <h1>Registro para Vacunación</h1>
     
@@ -18,7 +37,7 @@
                     <td><label>Segundo Apellido</label></td>
                 </tr>
                 <tr>
-                    <td><input type="number" value="{{curpRC}}" formControlName="curp" readonly></td>
+                    <td><input type="text" value="{{curpRC}}" formControlName="curp" readonly></td>
                     <td><input formControlName="nombre" type="text" required></td>
                     <td><input formControlName="priApe" type="text" required></td>
                     <td><input formControlName="segApe" type="text" required></td>
@@ -31,7 +50,7 @@
                 </tr>
                 <tr>
                     <td><input formControlName="fecNac" type="date" required></td>
-                    <td><input formControlName="edad" value="{{curpRC}}" type="number" required></td>
+                    <td><input formControlName="edad"type="number" pattern="([1][8-9]|[2-5][0-9]|[6][0-5])$" required></td>
                     <td><input formControlName="entNac" required></td>
                     <td><select formControlName="sexo" required>
                         <option value="Masculino">Masculino</option>
@@ -50,9 +69,9 @@
                     <td><label>Correo Electrónico</label></td>
                 </tr>
                 <tr>
-                    <td><input formControlName="telCon1" value="{{curpRC}}" type="tel" required></td>
-                    <td><input formControlName="telCon2" value="{{curpRC}}" type="tel" required></td>
-                    <td><input formControlName="email" type="email" required></td>
+                    <td><input formControlName="telCon1" type="tel" pattern="[0-9]{10}" required></td>
+                    <td><input formControlName="telCon2" type="tel" pattern="[0-9]{10}" required></td>
+                    <td><input formControlName="email" type="email" pattern="(.+)@(\\S+)$" required></td>
                 </tr>
             </div>
 
@@ -65,7 +84,7 @@
                 </tr>
                 <tr>
                     <td colspan="2"><input formControlName="calle" type="text" required></td>
-                    <td><input formControlName="numExt" value="{{curpRC}}" type="number" required></td>
+                    <td><input formControlName="numExt" type="number" required></td>
                     <td><input formControlName="numInt" type="text" ></td>
                 </tr>
                 <tr>
@@ -75,9 +94,9 @@
                     <td><label>Colonia (Opcional)</label></td>
                 </tr>
                 <tr>
-                    <td><input formControlName="calle" type="text" required></td>
-                    <td><input formControlName="codPos" value="{{curpRC}}" type="number" required></td>
-                    <td><input value="{{municRC}}" formControlName="munic" type="text" required></td>
+                    <td><input formControlName="entFed" type="text" required></td>
+                    <td><input formControlName="codPos" type="number" pattern="([0-9]{5})$" required></td>
+                    <td><input value="{{municRC}}" formControlName="munic" type="text" readonly></td>
                     <td><input formControlName="colonia" type="text"></td>
                 </tr>
             </div>
@@ -106,7 +125,7 @@
                 </tr>
                 <tr>
                     <td><input formControlName="folio" type="number" required></td>
-                    <td><input formControlName="camp_id" value="1" type="number"></td>
+                    <td><input formControlName="camp_id" value="{{campaIdRC}}" type="number"></td>
                     <td><p>Si no conoces tu folio o aún no te registras en mi vacuna <a href="#">da clic aquí</a></p></td>
                 </tr>
                 

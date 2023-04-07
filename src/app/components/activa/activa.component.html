@@ -1,7 +1,7 @@
-<div class="inicio">
+<div id="inicio" *ngIf="mostrarAC">
     <div id="campana">
         <div id="activa">
-            <div *ngFor="let campana of campanas" class="tipo-dosis">
+            <div *ngFor="let campana of campanas" class="tipo-dosis" (click)="getCampaId(campana.id)">
                 <div *ngIf="campana.municipio == municDC">
                     <div *ngFor="let persona of personas">
                         <div *ngIf="campana.edades == persona.edad">
@@ -13,8 +13,14 @@
                     <h3>{{campana.marca}}</h3>
                     <h4 *ngIf="campana.dateDosis != '0000-00-00'">Primera dosis aplicada antes del {{campana.dateDosis}}</h4>
                     <h5>{{campana.municipio}}</h5>
+                    <h5>{{campana.id}}</h5>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <div class="t-buttons">
+        <button  type="submit" class="button-dis">Regresar</button>
+        <button  type="submit"  (click)="getCampa()" class="button">Continuar</button>
     </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="inicio">
+<div id="inicio" *ngIf="mostrarDC">
     <h1>Campañas activas de vacunación contra Covid-19 (ZMG)</h1>
     <hr>
 
@@ -7,32 +7,41 @@
         <h5>Selecciona si es tu primera o segunda dosis por aplicar</h5>
     </div>
 
-
+    
     <div *ngFor="let campana of campanas"  id="num-dosis">
-        <div *ngIf="campana.municipio == municDC && campana.dosis == 'Primera'" class="abl-dosis">
-            <img src="#" alt="1">
-            <h1>Primera dosis</h1>
-            <h6>Disponible</h6>
+        <div *ngIf="campana.municipio == municDC && campana.dosis">
+            <div *ngIf="campana.dosis == 'Primera'" class="abl-dosis"  (click)="getCampaId(campana.id)">
+                <img src="#" alt="1">
+                <h1>{{campana.dosis}} dosis</h1>
+                <h6>Disponible</h6>
+            </div>
+    
+            <div *ngIf="campana.dosis != 'Primera'" class="dis-dosis">
+                <img src="#" alt="1">
+                <h1>Primera dosis</h1>
+                <h6>No disponible por el momento</h6>
+            </div>
         </div>
 
-        <div *ngIf="campana.municipio == municDC && campana.dosis != 'Primera'" class="dis-dosis">
-            <img src="#" alt="1">
-            <h1>Primera dosis</h1>
-            <h6>No disponible por el momento</h6>
-        </div>
-
-        <div *ngIf="campana.municipio == municDC && campana.dosis == 'Segunda'" class="abl-dosis">
-            <img src="#" alt="1">
-            <h1>Segunda dosis</h1>
-            <h6>Disponible</h6>
-        </div>
-
-        <div *ngIf="campana.municipio == municDC && campana.dosis != 'Segunda'" class="dis-dosis">
-            <img src="#" alt="1">
-            <h1>Segunda dosis</h1>
-            <h6>No disponible por el momento</h6>
+        <div *ngIf="campana.municipio == municDC && campana.dosis">
+            <div *ngIf="campana.dosis == 'Segunda'" class="abl-dosis" (click)="getCampaId(campana.id)">
+                <img src="#" alt="1">
+                <h1>{{campana.dosis}} dosis</h1>
+                <h6>Disponible</h6>
+            </div>
+    
+            <div *ngIf="campana.dosis != 'Segunda'" class="dis-dosis">
+                <img src="#" alt="1">
+                <h1>Segunda dosis</h1>
+                <h6>No disponible por el momento</h6>
+            </div>
         </div>
     </div> 
+
+    <div class="t-buttons">
+        <button  type="submit" class="button-dis">Regresar</button>
+        <button  type="submit"  (click)="getCampa()" class="button">Continuar</button>
+    </div>
 
 
 </div>

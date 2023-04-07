@@ -80,6 +80,11 @@ button {
   background-color: #ccc;
 }
 
+.clearfix {
+  clear: both;
+  float: none;
+}
+
 #header {
   width: 100%;
   display: inline-block;
@@ -115,24 +120,25 @@ button {
 .content .center {
   text-align: center;
 }
-.content .inicio {
+.content #inicio {
   width: 60%;
   margin: 0 auto;
 }
-.content .inicio #campana {
+.content #inicio #campana {
   display: flex;
 }
-.content .inicio #campana #activa {
+.content #inicio #campana #activa {
   display: flex;
   width: 42%;
-  height: 300px;
+  height: 250px;
   margin: 0 auto;
   padding: 1% 2%;
   display: inline-block;
   border: 1px #ccc solid;
   border-radius: 20px;
+  cursor: pointer;
 }
-.content .inicio #agendar .o-button {
+.content #inicio #agendar .o-button {
   background: rgb(9, 33, 139);
   border: none;
   border-radius: 10px;
@@ -141,7 +147,7 @@ button {
   padding: 2% 8%;
   margin-left: 12%;
 }
-.content .inicio input {
+.content #inicio input {
   width: 50%;
   border: 2px #ccc solid;
   border-radius: 5px;
@@ -150,10 +156,10 @@ button {
   padding: 1% 5%;
   margin: 3% 0px;
 }
-.content .inicio input::placeholder {
+.content #inicio input::placeholder {
   color: #666;
 }
-.content .inicio select {
+.content #inicio select {
   display: block;
   font-size: 18px;
   font-weight: 400;
@@ -169,7 +175,7 @@ button {
   border-radius: 0.3em;
   background-color: white;
 }
-.content .inicio .info-tel {
+.content #inicio .info-tel {
   width: 10%;
   position: fixed;
   top: 90px;
@@ -181,24 +187,24 @@ button {
   line-height: 40px;
   font-size: 18px;
 }
-.content .inicio .info-tel a {
+.content #inicio .info-tel a {
   background-color: rgb(111, 197, 255);
   color: white;
   text-decoration: none;
   font-style: normal;
   font-weight: bold;
 }
-.content .inicio .form .button, .content .inicio .form .button-dis {
+.content #inicio .form .button, .content #inicio .form .button-dis {
   margin: 0px 12%;
 }
-.content .inicio #municipio {
+.content #inicio #municipio {
   width: 50%;
   margin: 0px auto;
 }
-.content .inicio #num-dosis {
+.content #inicio #num-dosis {
   display: flex;
 }
-.content .inicio #num-dosis .abl-dosis, .content .inicio #num-dosis .dis-dosis {
+.content #inicio #num-dosis .abl-dosis, .content #inicio #num-dosis .dis-dosis {
   width: 350px;
   max-width: 100%;
   margin: 5%;
@@ -208,44 +214,64 @@ button {
   text-align: center;
   cursor: pointer;
 }
-.content .inicio #num-dosis .dis-dosis {
+.content #inicio #num-dosis .dis-dosis {
   background-color: #f1f1f1;
   cursor: context-menu;
 }
-.content .inicio #num-dosis .dis-dosis h1 {
+.content #inicio #num-dosis .dis-dosis h1 {
   color: #666;
 }
 
-.registro {
+#registro {
   width: 75%;
   margin: 2% auto;
   padding-bottom: 3%;
 }
-.registro #curp-rc {
+#registro #head-reg #curp-rc {
   width: 40%;
+  float: left;
   padding: 0.5% 2%;
   border: none;
   border-radius: 20px;
   background-color: #ccc;
   line-height: 40px;
 }
-.registro #curp-rc h5 {
+#registro #head-reg #curp-rc h5 {
   font-size: 18px;
 }
-.registro .formulario table {
+#registro #head-reg #campana {
+  width: 30%;
+  float: right;
+  padding: 0px 2.5%;
+}
+#registro #head-reg #campana #der {
+  float: left;
+}
+#registro #head-reg #campana p {
+  margin: 0px;
+  font-size: 15px;
+}
+#registro #head-reg #campana p span {
+  color: rgb(111, 197, 255);
+  font-weight: 600;
+}
+#registro #head-reg #campana p strong {
+  color: rgb(9, 33, 139);
+}
+#registro .formulario table {
   width: 100%;
   margin: 0px auto;
 }
-.registro .formulario table tr td {
+#registro .formulario table tr td {
   width: 27%;
 }
-.registro .formulario label {
+#registro .formulario label {
   font-size: 18px;
   color: #666;
   font-style: normal;
   font-weight: bold;
 }
-.registro .formulario input, .registro .formulario select {
+#registro .formulario input, #registro .formulario select {
   display: block;
   width: 100%;
   max-width: 100%;
@@ -260,7 +286,7 @@ button {
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.03);
   border-radius: 0.3em;
 }
-.registro .button, .registro .button-dis {
+#registro .button, #registro .button-dis {
   margin: 0px 12%;
 }
 

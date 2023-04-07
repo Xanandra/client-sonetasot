@@ -8,17 +8,27 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class MunicipioComponent implements OnInit {
 
-  municMC: string = '';
+  public municMC: string = '';
+  public mostrarMC: boolean = true;
+  public mostrarDC: boolean = true;
 
   constructor(public dataService:DataService) { }
 
   ngOnInit(): void {
+    //Recibir
+    this.dataService.mostrarHEvent$.subscribe(mostrarServ => {
+      this.mostrarMC = mostrarServ;
+      console.log(' Municipio2: ', mostrarServ);
+     })
   }
 
   getMunic(): void {
     console.log(this.municMC)
     this.dataService.municEvent$.emit(this.municMC);
     //this.router.navigate(['/register'])
+    this.mostrarMC = true;
+    //Dar
+    this.dataService.mostrarMEvent$.emit(this.mostrarDC);
    }
 
 }

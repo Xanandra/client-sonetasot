@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CampanaService } from 'src/app/service/campana.service';
 import { DataService } from 'src/app/service/data.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
@@ -15,13 +16,22 @@ export class RegisterComponent implements OnInit {
 
    public curpRC: string = 'Registro!';
    public municRC: string = 'Registro!';
+   public campaIdRC: number = 2;
 
    addResult: Array<any> = []
+   campanas: Array<any> = []
+
+   personas = [
+    {edad: "18 y más", img: "./assets/image/per-18.png"},
+    {edad: "Adultos mayores", img: "./assets/image/per-may.png"},
+    {edad: "12 a 17 años", img: "./assets/image/per-nin.png"},
+    {edad: "embarazadas", img: "./assets/image/per-emb.png"},
+  ];
 
   constructor(
     public dataService:DataService, 
     public usuarioService:UsuarioService, 
-    private router:Router, 
+    public campanaService:CampanaService, 
     public formulario:FormBuilder) { 
       this.formUsers=this.formulario.group({
         curp: [''],
@@ -47,7 +57,7 @@ export class RegisterComponent implements OnInit {
         pNombre: [''],
         pPriApe: [''],
         pSegApe: [''],
-        camp_id: [1]
+        camp_id: [0]
       });
     }
 
@@ -60,9 +70,22 @@ export class RegisterComponent implements OnInit {
 
      this.dataService.municEvent$.subscribe(municServ => {
       this.municRC = municServ;
-      console.log(' Municipio: ', municServ);
+      console.log(' Municipio1: ', municServ);
      })
-  }
+
+     this.dataService.campanaEvent$.subscribe(campaServ => {
+      this.campaIdRC = campaServ;
+      console.log(' Campaña5: ', campaServ);
+     })
+
+     this.getCampanas();
+    }
+  
+    getCampanas(){
+      this.campanaService.getCampanas().subscribe((campana)=>{
+        return this.campanas = campana
+      })
+    }
 
   addUser():any {
     this.formUsers.value.curp = this.curpRC;

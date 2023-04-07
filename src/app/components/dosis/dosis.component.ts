@@ -11,6 +11,9 @@ import { CampanaService } from 'src/app/service/campana.service';
 export class DosisComponent implements OnInit {
 
   public municDC: string = 'Registro!';
+  public campanasId: number = 0;
+  public mostrarDC: boolean = false;
+  public mostrarAC: boolean = true;
 
   campanas: Array<any> = []
 
@@ -22,10 +25,16 @@ export class DosisComponent implements OnInit {
 
     this.getCampanas();
 
+    // Recibir
+    this.dataService.mostrarMEvent$.subscribe(mostrarServ => {
+      this.mostrarDC = mostrarServ;
+      console.log(' Municipio2: ', mostrarServ);
+     })
     this.dataService.municEvent$.subscribe(municServ => {
       this.municDC = municServ;
-      console.log(' Municipio: ', municServ);
+      console.log(' Municipio2: ', municServ);
      })
+     
   }
 
   getCampanas(){
@@ -34,5 +43,16 @@ export class DosisComponent implements OnInit {
     })
   }
 
+  getCampaId(cId: number): void {
+    this.campanasId = cId;
+    console.log("Campaña:", this.campanasId)
+   }
 
+  getCampa(): void {
+    this.dataService.campanaEvent$.emit(this.campanasId);
+    console.log("Campaña:", this.campanasId)
+    this.mostrarDC = false;
+    //  Dar
+    this.dataService.mostrarDEvent$.emit(this.mostrarAC);
+   }
 }
