@@ -1,9 +1,9 @@
 import { Component, OnInit} from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CampanaService } from 'src/app/service/campana.service';
 import { DataService } from 'src/app/service/data.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,12 +11,15 @@ import { UsuarioService } from 'src/app/service/usuario.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+[x: string]: any;
 
   formUsers:FormGroup;
 
-   public curpRC: string = 'Registro!';
-   public municRC: string = 'Registro!';
-   public campaIdRC: number = 2;
+   public curpRC: string = '';
+   public municRC: string = '';
+   public campaIdRC: number = 0;
+   public mostrarRC: boolean = false;
+   public reg: string = 'reg-dis';
 
    addResult: Array<any> = []
    campanas: Array<any> = []
@@ -32,32 +35,33 @@ export class RegisterComponent implements OnInit {
     public dataService:DataService, 
     public usuarioService:UsuarioService, 
     public campanaService:CampanaService, 
+    public router:Router,
     public formulario:FormBuilder) { 
       this.formUsers=this.formulario.group({
         curp: [''],
-        nombre: [''],
-        priApe: [''],
-        segApe: [''],
-        fecNac: [''],
-        edad: [0],
-        entNac: [''],
-        sexo: [''],
-        telCon1: [0],
-        telCon2: [0],
-        email: [''],
-        calle: [''],
-        numExt: [0],
+        nombre: ['', Validators.required],
+        priApe: ['', Validators.required],
+        segApe: ['', Validators.required],
+        fecNac: ['', Validators.required],
+        edad: ['', Validators.required],
+        entNac: ['', Validators.required],
+        sexo: ['', Validators.required],
+        telCon1: ['', Validators.required],
+        telCon2: [''],
+        email: ['', Validators.required],
+        calle: ['', Validators.required],
+        numExt: ['', Validators.required],
         numInt: [''],
-        entFed: [''],
-        codPos: [0],
+        entFed: ['', Validators.required],
+        codPos: ['', Validators.required],
         munic: [''],
         colonia: [''],
-        folio: [''],
+        folio: ['', Validators.required],
         fecCit: [''],
         pNombre: [''],
         pPriApe: [''],
         pSegApe: [''],
-        camp_id: [0]
+        camp_id: ['']
       });
     }
 
@@ -79,6 +83,13 @@ export class RegisterComponent implements OnInit {
      })
 
      this.getCampanas();
+    //  Recibir
+    this.dataService.mostrarAEvent$.subscribe(mostrarServ => {
+      this.mostrarRC = mostrarServ;
+      if(this.mostrarRC){
+        this.reg = 'reg-abl';
+      }
+     })
     }
   
     getCampanas(){
@@ -89,13 +100,14 @@ export class RegisterComponent implements OnInit {
 
   addUser():any {
     this.formUsers.value.curp = this.curpRC;
+    this.formUsers.value.munic = this.municRC;
+    this.formUsers.value.camp_id = this.campaIdRC;
     console.log(this.formUsers.value);
 
     this.usuarioService.addUser(this.formUsers.value).subscribe((result)=>{
       console.log(result);
+      this.router.navigate(['/'])
       return this.addResult = result
     });
-    
   }
-
 }

@@ -18,14 +18,12 @@ export class MunicipioComponent implements OnInit {
     //Recibir
     this.dataService.mostrarHEvent$.subscribe(mostrarServ => {
       this.mostrarMC = mostrarServ;
-      console.log(' Municipio2: ', mostrarServ);
      })
   }
 
   getMunic(): void {
     console.log(this.municMC)
     this.dataService.municEvent$.emit(this.municMC);
-    //this.router.navigate(['/register'])
     this.mostrarMC = true;
     //Dar
     this.dataService.mostrarMEvent$.emit(this.mostrarDC);

@@ -25,16 +25,15 @@ export class DosisComponent implements OnInit {
 
     this.getCampanas();
 
-    // Recibir
-    this.dataService.mostrarMEvent$.subscribe(mostrarServ => {
-      this.mostrarDC = mostrarServ;
-      console.log(' Municipio2: ', mostrarServ);
-     })
     this.dataService.municEvent$.subscribe(municServ => {
       this.municDC = municServ;
       console.log(' Municipio2: ', municServ);
      })
      
+    // Recibir
+    this.dataService.mostrarMEvent$.subscribe(mostrarServ => {
+      this.mostrarDC = mostrarServ;
+    })
   }
 
   getCampanas(){

@@ -286,8 +286,25 @@ button {
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.03);
   border-radius: 0.3em;
 }
+#registro .formulario small {
+  color: #f00;
+}
 #registro .button, #registro .button-dis {
   margin: 0px 12%;
+}
+#registro .reg-dis {
+  display: none;
+}
+#registro .reg-abl {
+  display: block;
+}
+#registro input[type=number]::-webkit-inner-spin-button,
+#registro input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#registro .ng-invalid:not(form) {
+  border-left: 5px solid #a94442; /* red */
 }
 
 #footer {

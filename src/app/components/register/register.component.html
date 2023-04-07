@@ -1,138 +1,244 @@
 <div id="registro">
-
-    <div id="head-reg">
-        <div id="curp-rc"><h5>CURP: {{dataService.curpEvent$ | async}}</h5></div>
-    
-        <div id="campana">
-            <div *ngFor="let campana of campanas" id="activa">
-                <div *ngIf="campana.id == campaIdRC">
-                    <div *ngFor="let persona of personas">
-                        <div *ngIf="campana.edades == persona.edad" id="der">
-                            <img src="{{persona.img}}" alt="personajes">
+    <div class="{{reg}}">
+        <div id="head-reg">
+            <div id="curp-rc"><h5>CURP: {{dataService.curpEvent$ | async}}</h5></div>
+        
+            <div id="campana">
+                <div *ngFor="let campana of campanas" id="activa">
+                    <div *ngIf="campana.id == campaIdRC">
+                        <div *ngFor="let persona of personas">
+                            <div *ngIf="campana.edades == persona.edad" id="der">
+                                <img src="{{persona.img}}" alt="personajes">
+                            </div>
                         </div>
+                        <p>Campaña</p>
+                        <p>{{campana.municipio}} / <span>{{campana.dosis}} dosis</span></p>
+                        <p><b>Personas de </b> <strong>{{campana.edades}}</strong></p>
                     </div>
-                    <p>Campaña</p>
-                    <p>{{campana.municipio}} / <span>{{campana.dosis}} dosis</span></p>
-                    <p><b>Personas de </b> <strong>{{campana.edades}}</strong></p>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="clearfix"></div>
-    
-    <h1>Registro para Vacunación</h1>
-    
-    <p>
-        Es importante verifiques la información que se presenta a continuación, corresponde a la CURP que estas 
-        solicitando y que coincide con los datos proporcionados
-    </p>
-    
-    <form [formGroup]="formUsers" (ngSubmit)="addUser()" class="formulario">
-        <table>
-            <div>
-                <tr>
-                    <td><label>CURP</label></td>
-                    <td><label>Nombre</label></td>
-                    <td><label>Primer Apellido</label></td>
-                    <td><label>Segundo Apellido</label></td>
-                </tr>
-                <tr>
-                    <td><input type="text" value="{{curpRC}}" formControlName="curp" readonly></td>
-                    <td><input formControlName="nombre" type="text" required></td>
-                    <td><input formControlName="priApe" type="text" required></td>
-                    <td><input formControlName="segApe" type="text" required></td>
-                </tr>
-                <tr>
-                    <td><label>Fecha de Nacimiento</label></td>
-                    <td><label>Edad</label></td>
-                    <td><label>Entidad de Naciemiento</label></td>
-                    <td><label>Sexo</label></td>
-                </tr>
-                <tr>
-                    <td><input formControlName="fecNac" type="date" required></td>
-                    <td><input formControlName="edad"type="number" pattern="([1][8-9]|[2-5][0-9]|[6][0-5])$" required></td>
-                    <td><input formControlName="entNac" required></td>
-                    <td><select formControlName="sexo" required>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Femenino">Femenino</option>
-                        <option value="Otro">Otro</option>
-                    </select></td>
-                </tr>
-            </div>
-            
-
-            <div id="cont-form">
-                <h2>Contacto</h2>
-                <tr>
-                    <td><label>Teléfono de contacto 1</label></td>
-                    <td><label>Teléfono de contacto 2</label></td>
-                    <td><label>Correo Electrónico</label></td>
-                </tr>
-                <tr>
-                    <td><input formControlName="telCon1" type="tel" pattern="[0-9]{10}" required></td>
-                    <td><input formControlName="telCon2" type="tel" pattern="[0-9]{10}" required></td>
-                    <td><input formControlName="email" type="email" pattern="(.+)@(\\S+)$" required></td>
-                </tr>
-            </div>
-
-            <div id="ubic-form">
-                <h2>Ubicación</h2>
-                <tr>
-                    <td colspan="2"><label>Calle</label></td>
-                    <td><label>Número Exterior</label></td>
-                    <td><label>Número Interior (Opcional)</label></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input formControlName="calle" type="text" required></td>
-                    <td><input formControlName="numExt" type="number" required></td>
-                    <td><input formControlName="numInt" type="text" ></td>
-                </tr>
-                <tr>
-                    <td><label>Entidad Federativa</label></td>
-                    <td><label>Código Postal</label></td>
-                    <td><label>Municipio</label></td>
-                    <td><label>Colonia (Opcional)</label></td>
-                </tr>
-                <tr>
-                    <td><input formControlName="entFed" type="text" required></td>
-                    <td><input formControlName="codPos" type="number" pattern="([0-9]{5})$" required></td>
-                    <td><input value="{{municRC}}" formControlName="munic" type="text" readonly></td>
-                    <td><input formControlName="colonia" type="text"></td>
-                </tr>
-            </div>
-
-            <div id="pad-form">
-                <h2>Datos del padre o tutor</h2>
-                <tr>
-                    <td><label>Nombre</label></td>
-                    <td><label>Primer Apellido</label></td>
-                    <td><label>Segundo Apellido</label></td>
-                </tr>
-                <tr>
-                    <td><input formControlName="pNombre" type="text"></td>
-                    <td><input formControlName="pPriApe" type="text"></td>
-                    <td><input formControlName="pSegApe" type="text"></td>
-                </tr>
-            </div>
-
-                
-            <div id="fol-form">
-                <h2>Folio Mi Vacuna</h2>
-                
-                <tr>
-                    <td><label>Nombre</label></td>
-                    <td><label>Campaña</label></td>
-                </tr>
-                <tr>
-                    <td><input formControlName="folio" type="number" required></td>
-                    <td><input formControlName="camp_id" value="{{campaIdRC}}" type="number"></td>
-                    <td><p>Si no conoces tu folio o aún no te registras en mi vacuna <a href="#">da clic aquí</a></p></td>
-                </tr>
-                
-            </div>
-        </table>
+        <div class="clearfix"></div>
         
-        <button class="button-dis"> Cancelar </button>
-        <button class="button" type="submit"> Continuar </button>
-    </form>
+        <h1>Registro para Vacunación</h1>
+        
+        <p>
+            Es importante verifiques la información que se presenta a continuación, corresponde a la CURP que estas 
+            solicitando y que coincide con los datos proporcionados
+        </p>
+        
+        <form [formGroup]="formUsers" (ngSubmit)="addUser()" class="formulario">
+            <table>
+                <div>
+                    <tr>
+                        <td><label>CURP</label></td>
+                        <td><label>Nombre</label></td>
+                        <td><label>Primer Apellido</label></td>
+                        <td><label>Segundo Apellido</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="{{curpRC}}" formControlName="curp" readonly></td>
+                        <td><input formControlName="nombre" type="text" required></td>
+                        <td><input formControlName="priApe" type="text" required></td>
+                        <td><input formControlName="segApe" type="text" required></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <small *ngIf="formUsers.controls['nombre'].errors?.['required'] 
+                            && formUsers.controls['nombre'].touched">
+                                Nombre no puede estar vacio
+                            </small>
+                        </td>
+                        <td>
+                            <small *ngIf="formUsers.controls['priApe'].errors?.['required'] 
+                            && formUsers.controls['priApe'].touched">
+                                Primer Apellido no puede estar vacio
+                            </small>
+                        </td>
+                        <td>
+                            <small *ngIf="formUsers.controls['segApe'].errors?.['required'] 
+                            && formUsers.controls['segApe'].touched">
+                                Segundo Apellido no puede estar vacio
+                            </small>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Fecha de Nacimiento</label></td>
+                        <td><label>Edad</label></td>
+                        <td><label>Entidad de Nacimiento</label></td>
+                        <td><label>Sexo</label></td>
+                    </tr>
+                    <tr>
+                        <td><input formControlName="fecNac" type="date" required></td>
+                        <td><input formControlName="edad"type="number" pattern="([0-9]|[1-9][0-9]|[1][0-1][0-9])$" required></td>
+                        <td><input formControlName="entNac" required></td>
+                        <td><select formControlName="sexo" required>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <small *ngIf="formUsers.controls['fecNac'].errors?.['required'] 
+                            && formUsers.controls['fecNac'].touched">
+                                Fecha de Nacimiento no puede estar vacio
+                            </small>
+                        </td>
+                        <td>
+                            <small *ngIf="formUsers.controls['edad'].errors?.['required'] 
+                            && formUsers.controls['edad'].touched">
+                                Edad no puede estar vacio
+                            </small>
+                        </td>
+                        <td>
+                            <small *ngIf="formUsers.controls['entNac'].errors?.['required'] 
+                            && formUsers.controls['entNac'].touched">
+                                Entidad de Nacimiento no puede estar vacio
+                            </small>
+                        </td>
+                        <td>
+                            <small *ngIf="formUsers.controls['segApe'].errors?.['required'] 
+                            && formUsers.controls['segApe'].touched">
+                                Sexo no puede estar vacio
+                            </small>
+                        </td>
+                    </tr>
+                </div>
+                
+    
+                <div id="cont-form">
+                    <h2>Contacto</h2>
+                    <tr>
+                        <td><label>Teléfono de Contacto 1</label></td>
+                        <td><label>Teléfono de Contacto 2</label></td>
+                        <td><label>Correo Electrónico</label></td>
+                    </tr>
+                    <tr>
+                        <td><input formControlName="telCon1" type="tel" pattern="[0-9]{10}" required></td>
+                        <td><input formControlName="telCon2" type="tel" pattern="[0-9]{10}"></td>
+                        <td><input formControlName="email" type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}$" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <small *ngIf="formUsers.controls['telCon1'].errors?.['required'] 
+                            && formUsers.controls['telCon1'].touched">
+                                Teléfono de Contacto 1 no puede estar vacio
+                            </small>
+                        </td>
+                        <td>
+                            <small *ngIf="formUsers.controls['telCon2'].errors?.['required'] 
+                            && formUsers.controls['telCon2'].touched">
+                                Teléfono de Contacto 2 no puede estar vacio
+                            </small></td>
+                        <td>
+                            <small *ngIf="formUsers.controls['email'].errors?.['required'] 
+                            && formUsers.controls['email'].touched">
+                                Correo Electrónico no puede estar vacio
+                            </small>
+                        </td>
+                    </tr>
+                </div>
+    
+                <div id="ubic-form">
+                    <h2>Ubicación</h2>
+                    <tr>
+                        <td colspan="2"><label>Calle</label></td>
+                        <td><label>Número Exterior</label></td>
+                        <td><label>Número Interior (Opcional)</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input formControlName="calle" type="text" required></td>
+                        <td><input formControlName="numExt" type="number" required></td>
+                        <td><input formControlName="numInt" type="text" ></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <small *ngIf="formUsers.controls['calle'].errors?.['required'] 
+                            && formUsers.controls['calle'].touched">
+                                Calle no puede estar vacio
+                            </small>
+                        </td>
+                        <td>
+                            <small *ngIf="formUsers.controls['numExt'].errors?.['required'] 
+                            && formUsers.controls['numExt'].touched">
+                                Número Exterior no puede estar vacio
+                            </small>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label>Entidad Federativa</label></td>
+                        <td><label>Código Postal</label></td>
+                        <td><label>Municipio</label></td>
+                        <td><label>Colonia (Opcional)</label></td>
+                    </tr>
+                    <tr>
+                        <td><input formControlName="entFed" type="text" required></td>
+                        <td><input formControlName="codPos" type="number" pattern="([0-9]{5})$" required></td>
+                        <td><input type="text" value="{{municRC}}" formControlName="munic" readonly></td>
+                        <td><input formControlName="colonia" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <small *ngIf="formUsers.controls['entFed'].errors?.['required'] 
+                            && formUsers.controls['entFed'].touched">
+                                Entidad Federativa no puede estar vacio
+                            </small>
+                        </td>
+                        <td>
+                            <small *ngIf="formUsers.controls['codPos'].errors?.['required'] 
+                            && formUsers.controls['codPos'].touched">
+                                Código Postal no puede estar vacio
+                            </small>
+                        </td>
+                        <td></td>
+                    </tr>
+                    
+                </div>
+    
+                <div id="pad-form">
+                    <h2>Datos del padre o tutor</h2>
+                    <tr>
+                        <td><label>Nombre</label></td>
+                        <td><label>Primer Apellido</label></td>
+                        <td><label>Segundo Apellido</label></td>
+                    </tr>
+                    <tr>
+                        <td><input formControlName="pNombre" type="text"></td>
+                        <td><input formControlName="pPriApe" type="text"></td>
+                        <td><input formControlName="pSegApe" type="text"></td>
+                    </tr>
+                </div>
+    
+                    
+                <div id="fol-form">
+                    <h2>Folio Mi Vacuna</h2>
+                    
+                    <tr>
+                        <td colspan="2"><label>Folio</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input formControlName="folio" type="number" required></td>
+                        <td class="reg-dis"><input type="text" value="{{campaIdRC}}" formControlName="camp_id" readonly></td>
+                        <td><p>Si no conoces tu folio o aún no te registras en mi vacuna <a href="#">da clic aquí</a></p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <small *ngIf="formUsers.controls['folio'].errors?.['required'] 
+                            && formUsers.controls['folio'].touched">
+                                Folio no puede estar vacio
+                            </small>
+                        </td>
+                    </tr>
+                    
+                </div>
+            </table>
+            
+            <button class="button-dis"> Cancelar </button>
+            <button class="button" type="submit" [disabled]="formUsers.invalid"> Continuar </button>
+        </form>
+    </div>
 </div>

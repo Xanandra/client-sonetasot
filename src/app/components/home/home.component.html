@@ -20,15 +20,16 @@
             <h2>Comenzar ahora</h2>
             <h5>Ingresa tu CURP para agendar una cita o para cancelar una cita ya registrada.</h5>
             <form class="form" #userForm="ngForm" (ngSubmit)="getCurp()">
-                <input  type="text" class="input" id="curp"  name="user_curp" #name="ngModel" [(ngModel)]="curp" 
-                required pattern="([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$" placeholder="Ingresa tu CURP">
+                <input  type="text" class="input" id="curp"  name="user_curp" #name="ngModel" [(ngModel)]="curp" required 
+                pattern="([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$" 
+                placeholder="Ingresa tu CURP">
                 <button  type="submit" [disabled]="userForm.invalid" class="o-button">Continuar</button>
                 <h5>Si no conoces tu CURP <a href="#">consulta aquí</a></h5>
             </form>
         </div>
 
         <div class="info-tel">
-            <a href="33 3823 3220" class="button">33 3823 3220</a>
+            <a href="tel:+33 3823 3220" class="button">33 3823 3220</a>
         </div>
     </div>
 

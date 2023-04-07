@@ -42,7 +42,6 @@ export class ActivaComponent implements OnInit {
     //  Recibir
     this.dataService.mostrarDEvent$.subscribe(mostrarServ => {
       this.mostrarAC = mostrarServ;
-      console.log(' Municipio2: ', mostrarServ);
      })
   }
 
@@ -61,6 +60,8 @@ export class ActivaComponent implements OnInit {
     this.dataService.campanaEvent$.emit(this.campanasId);
     console.log("Campaña3:" + this.campanasId)
     this.mostrarAC = false;
+    //  Dar
+    this.dataService.mostrarAEvent$.emit(this.mostrarRC);
    }
 
 }
