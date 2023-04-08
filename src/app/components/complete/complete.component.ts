@@ -9,6 +9,8 @@ import { CampanaService } from 'src/app/service/campana.service';
 })
 export class CompleteComponent implements OnInit {
 
+  flagCancel: boolean = false;
+
   Usuarios: Array<any> = []
   campanas: Array<any> = []
 
@@ -34,11 +36,15 @@ export class CompleteComponent implements OnInit {
       return this.Usuarios = usuario;
     })
   }
-
     
   getCampanas(){
     this.campanaService.getCampanas().subscribe((campana)=>{
       return this.campanas = campana
     })
+  }
+
+  cancelCit(){
+    this.flagCancel = true;
+    
   }
 }

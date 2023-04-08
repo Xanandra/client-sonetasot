@@ -5,6 +5,7 @@ import { CompleteComponent } from './components/complete/complete.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MunicipioComponent } from './components/municipio/municipio.component';
 import { DosisComponent } from './components/dosis/dosis.component';
+import { CancelarComponent } from './components/cancelar/cancelar.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'complete', component: CompleteComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'municipio', component: MunicipioComponent},
-  {path: 'dosis', component: DosisComponent}
+  {path: 'dosis', component: DosisComponent},
+  {path: 'cancelar', component: CancelarComponent}
 ];
 
 @NgModule({

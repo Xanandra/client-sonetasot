@@ -1,6 +1,6 @@
 <div id="complete">
     <h1>Registro concluido</h1>
-    <div id="cancel"><a href="#" class="button">Quiero cancelar mi cita</a></div>
+    <div id="cancel"><button (click)="cancelCit()" class="button">Quiero cancelar mi cita</button></div>
     <div class="clearfix"></div>
 
     <div class="com-con">
@@ -57,4 +57,8 @@
         para obtener tu expediente de vacunación. <br>
         Recomendaciones para el día de tu vacunación:
     </p>
+</div>
+
+<div *ngIf="flagCancel">
+    <app-cancelar></app-cancelar>
 </div>
