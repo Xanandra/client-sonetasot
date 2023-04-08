@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-[x: string]: any;
 
   formUsers:FormGroup;
 
@@ -69,7 +68,7 @@ export class RegisterComponent implements OnInit {
 
      this.dataService.curpEvent$.subscribe(curpServ => {
       this.curpRC = curpServ;
-      console.log(' CURP: ', curpServ);
+      console.log(' CURP Register: ', curpServ);
      })
 
      this.dataService.municEvent$.subscribe(municServ => {

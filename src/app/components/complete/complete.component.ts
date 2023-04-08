@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { CampanaService } from 'src/app/service/campana.service';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-complete',
@@ -8,6 +9,8 @@ import { CampanaService } from 'src/app/service/campana.service';
   styleUrls: ['./complete.component.css']
 })
 export class CompleteComponent implements OnInit {
+
+  public curp: string = '';
 
   flagCancel: boolean = false;
 
@@ -22,12 +25,15 @@ export class CompleteComponent implements OnInit {
   ];
 
   constructor(public usuariosService:UsuarioService, 
-    public campanaService:CampanaService) { }
+    public campanaService:CampanaService, 
+    public dataService:DataService) { }
 
   ngOnInit(): void {
     
     this.getUsuarios();
     this.getCampanas();
+    this.cancelCit();
+ 
   }
 
   getUsuarios(){
@@ -43,8 +49,15 @@ export class CompleteComponent implements OnInit {
     })
   }
 
-  cancelCit(){
-    this.flagCancel = true;
+  cancelCit():void{  
+
+    this.Usuarios.forEach((usuario)=>{
+      this.curp = usuario.curp;
+    })
     
+    this.dataService.curpCCEvent$.emit(this.curp);
+    console.log("CURP Complete:",this.curp) 
+
+    this.flagCancel = true;
   }
 }

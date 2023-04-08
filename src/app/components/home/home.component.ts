@@ -13,7 +13,7 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 
 export class HomeComponent implements OnInit {
   
-  curp: string = '';
+  public curp: string = '';
   
   campanas: Array<any> = [];
 
@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
   // }
 
    getCurp(): void {
-    console.log(this.curp)
+    console.log("CURP Home: ",this.curp)
     this.dataService.curpEvent$.emit(this.curp);
     this.mostrar = false;
     //Dar

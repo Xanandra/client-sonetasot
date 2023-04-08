@@ -9,14 +9,17 @@ import { DataService } from 'src/app/service/data.service';
 export class CancelarComponent implements OnInit {
 
   curp: string = '';
+  public curpNC: string = '';
 
-  constructor(    public dataService:DataService) { }
+  constructor(public dataService:DataService) { }
 
   ngOnInit(): void {
-     this.dataService.curpEvent$.subscribe(curpServ => {
+    
+    this.dataService.curpCCEvent$.subscribe(curpServ => {
       this.curp = curpServ;
-      console.log(' CURP: ', curpServ);
-     })
+      console.log(' CURP Register: ', curpServ);
+    });
   }
+
 
 }

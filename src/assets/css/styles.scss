@@ -390,6 +390,10 @@ button{
         line-height: 45px;
         font-size: 18px;
 
+        #vent-emer{
+            display: inline-block;
+        }
+
         a{
             background-color: $c-rojo;
             color: #fff;

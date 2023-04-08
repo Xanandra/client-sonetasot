@@ -6,6 +6,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 export class DataService {
 
   curpEvent$ = new EventEmitter<string>();
+  curpCCEvent$ = new EventEmitter<string>();
   municEvent$ = new EventEmitter<string>();
   campanaEvent$ = new EventEmitter<number>();
   mostrarHEvent$ = new EventEmitter<boolean>();

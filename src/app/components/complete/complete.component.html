@@ -1,7 +1,7 @@
 <div id="complete">
     <h1>Registro concluido</h1>
-    <div id="cancel"><button (click)="cancelCit()" class="button">Quiero cancelar mi cita</button></div>
-    <div class="clearfix"></div>
+    <button (click)="cancelCit()" class="button" id="cancel">Quiero cancelar mi cita</button>
+    <!-- <div class="clearfix"></div> -->
 
     <div class="com-con">
         <div *ngFor="let usuario of Usuarios; last as isLast"  id="datos-prin">

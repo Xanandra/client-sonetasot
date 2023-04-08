@@ -327,6 +327,9 @@ button {
   line-height: 45px;
   font-size: 18px;
 }
+#complete #cancel #vent-emer {
+  display: inline-block;
+}
 #complete #cancel a {
   background-color: #b90000;
   color: #fff;
