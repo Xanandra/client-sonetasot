@@ -4,6 +4,7 @@ $c-naran: rgb(255, 150, 14);
 $c-gris: #666;
 $c-lgris: #f1f1f1;
 $c-beige: #ccc;
+$c-rojo: #b90000;
 
 body{
     background-color: white;
@@ -337,11 +338,11 @@ button{
             box-sizing: border-box;
             margin: 1%;
             border: none;
-            box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+            box-shadow: 0 1px 0 1px #00000008;
             border-radius: .3em;
         }
         small{
-            color: #f00;
+            color: $c-rojo;
         }
     }
 
@@ -365,6 +366,108 @@ button{
 
     .ng-invalid:not(form)  {
         border-left: 5px solid #a94442; /* red */
+    }
+}
+
+#complete{
+    width: 80%;
+    margin: 0px auto;
+
+    h1{
+        text-align: left;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    #cancel{
+        float: right;
+        border: none;
+        border-radius: 20px;
+        background-color: $c-rojo;
+        text-align: center;
+        margin: 1% 0px;
+        padding: 0px 1%;
+        line-height: 45px;
+        font-size: 18px;
+
+        a{
+            background-color: $c-rojo;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+
+    .com-con{
+        width: 95%;
+        display: inline-block;
+        margin: 0 auto;
+        padding: 2% 2.5% 3% 2.5%;
+        border: 2px $c-beige solid;
+        border-radius: 30px;
+
+        #datos-prin{
+            width: 100%;
+
+            #person{
+                display: inline-block;
+                width: 65%;
+
+                span{
+                    font-weight: 700;
+                }
+            }
+    
+            #campana{
+                display: inline-block;
+                width: 25%;
+                padding: 0px 2.5%;
+    
+                #der{
+                    float: left;
+                }
+    
+                p{
+                    margin: 0px;
+                    font-size: 15px;
+    
+                    span{
+                        color: $c-azul;
+                        font-weight: 600;
+                    }
+    
+                    strong{
+                        color: $c-marin;
+                    }
+                }
+            }
+
+            #activa{
+                .dat-cit{
+                    display: inline-block;
+                    width: 30%;
+                    margin: 0px 1.5%;
+
+                    p, span{
+                        font-weight: 700;
+                    }
+
+                    #dat{
+                        width: 100%;
+                        border: none;
+                        border-radius: 20px;
+                        background-color: $c-azul;
+                        text-align: center;
+                        color: #fff;
+                        line-height: 40px;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+        }
+
+        
     }
 }
 

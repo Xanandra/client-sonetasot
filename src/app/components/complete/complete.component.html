@@ -1,27 +1,56 @@
 <div id="complete">
     <h1>Registro concluido</h1>
-    <a href="#" class="button">Quiero cancelar mi cita</a>
+    <div id="cancel"><a href="#" class="button">Quiero cancelar mi cita</a></div>
+    <div class="clearfix"></div>
 
-    <div id="datos-prin">
-        <div id="person">
-            <p>CURP: </p>
-            <p>Nombre</p>
-        </div>
-
-        <div id="camp">
-            <img src="#" alt="perso">
-            <h4>Edades</h4>
-            <h4>Dosis</h4>
-            <h4>Marca</h4>
-            <h4>Municipio</h4>
-        </div>
+    <div class="com-con">
+        <div *ngFor="let usuario of Usuarios; last as isLast"  id="datos-prin">
+            <div *ngIf="isLast">
+                <div id="person">
+                    <p>CURP: <span> {{usuario.curp}}</span></p>
+                    <span>{{usuario.nombre}}</span>
+                </div>
+        
+                <div id="campana">
+                    <div *ngFor="let campana of campanas" id="activa">
+                        <div *ngIf="campana.id == usuario.camp_id">
+                            <div *ngFor="let persona of personas">
+                                <div *ngIf="campana.edades == persona.edad" id="der">
+                                    <img src="{{persona.img}}" alt="personajes">
+                                </div>
+                            </div>
+                            <p>Campaña</p>
+                            <p>{{campana.municipio}} / <span>{{campana.dosis}} dosis</span></p>
+                            <p><b>Personas de </b> <strong>{{campana.edades}}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+         </div>
     </div>
-
-    <div id="datos-lug">
-        <p>Modulo</p>
-        <p>Dirección</p>
-        <p>Fecha y Hora:</p>
-    </div>
+        <div class="com-con">
+            <div *ngFor="let usuario of Usuarios; last as isLast"  id="datos-prin">
+                <div *ngIf="isLast">
+                    <div *ngFor="let campana of campanas" id="activa">
+                        <div *ngIf="campana.id == usuario.camp_id">
+                            <div class="dat-cit">
+                                <span>Módulo</span>
+                                <p>{{campana.modulo}}</p>
+                            </div>
+                            <div class="dat-cit">
+                                <span>Dirección</span>
+                                <p>{{campana.domicilio}}</p>
+                            </div>
+                            <div class="dat-cit">
+                                <span>Fecha y Hora:</span>
+                                <p id="dat">{{campana.dateAplic}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <p>Ya tienes asegurado el lugar y hora para tu vacunación, ahora para asegurar tu dosis es muy importante 
         que también te registres en la platyaforma federal. Ingresa a <a href="#">https://mivacuna.salud.gob.mx/</a>

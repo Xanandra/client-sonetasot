@@ -12,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
 import { MunicipioComponent } from './components/municipio/municipio.component';
 import { DosisComponent } from './components/dosis/dosis.component';
-import { ActivaComponent } from './components/activa/activa.component'
+import { ActivaComponent } from './components/activa/activa.component';
+import { CancelarComponent } from './components/cancelar/cancelar.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ActivaComponent } from './components/activa/activa.component'
     RegisterComponent,
     MunicipioComponent,
     DosisComponent,
-    ActivaComponent
+    ActivaComponent,
+    CancelarComponent
   ],
   imports: [
     BrowserModule,

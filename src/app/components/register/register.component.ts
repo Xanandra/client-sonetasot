@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
         entNac: ['', Validators.required],
         sexo: ['', Validators.required],
         telCon1: ['', Validators.required],
-        telCon2: [''],
+        telCon2: ['', Validators.required],
         email: ['', Validators.required],
         calle: ['', Validators.required],
         numExt: ['', Validators.required],
@@ -106,8 +106,9 @@ export class RegisterComponent implements OnInit {
 
     this.usuarioService.addUser(this.formUsers.value).subscribe((result)=>{
       console.log(result);
-      this.router.navigate(['/'])
       return this.addResult = result
     });
+
+    this.router.navigateByUrl('/complete');
   }
 }

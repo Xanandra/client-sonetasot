@@ -7,12 +7,12 @@ import { MunicipioComponent } from './components/municipio/municipio.component';
 import { DosisComponent } from './components/dosis/dosis.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: '', redirectTo: '/', pathMatch: 'full'},
+  {path: '', component: HomeComponent},
   {path: 'complete', component: CompleteComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'municipio', component: MunicipioComponent},
-  {path: 'dosis', component: DosisComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'dosis', component: DosisComponent}
 ];
 
 @NgModule({

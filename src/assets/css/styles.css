@@ -283,11 +283,11 @@ button {
   box-sizing: border-box;
   margin: 1%;
   border: none;
-  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.031372549);
   border-radius: 0.3em;
 }
 #registro .formulario small {
-  color: #f00;
+  color: #b90000;
 }
 #registro .button, #registro .button-dis {
   margin: 0px 12%;
@@ -305,6 +305,88 @@ button {
 }
 #registro .ng-invalid:not(form) {
   border-left: 5px solid #a94442; /* red */
+}
+
+#complete {
+  width: 80%;
+  margin: 0px auto;
+}
+#complete h1 {
+  text-align: left;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+#complete #cancel {
+  float: right;
+  border: none;
+  border-radius: 20px;
+  background-color: #b90000;
+  text-align: center;
+  margin: 1% 0px;
+  padding: 0px 1%;
+  line-height: 45px;
+  font-size: 18px;
+}
+#complete #cancel a {
+  background-color: #b90000;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+#complete .com-con {
+  width: 95%;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 2% 2.5% 3% 2.5%;
+  border: 2px #ccc solid;
+  border-radius: 30px;
+}
+#complete .com-con #datos-prin {
+  width: 100%;
+}
+#complete .com-con #datos-prin #person {
+  display: inline-block;
+  width: 65%;
+}
+#complete .com-con #datos-prin #person span {
+  font-weight: 700;
+}
+#complete .com-con #datos-prin #campana {
+  display: inline-block;
+  width: 25%;
+  padding: 0px 2.5%;
+}
+#complete .com-con #datos-prin #campana #der {
+  float: left;
+}
+#complete .com-con #datos-prin #campana p {
+  margin: 0px;
+  font-size: 15px;
+}
+#complete .com-con #datos-prin #campana p span {
+  color: rgb(111, 197, 255);
+  font-weight: 600;
+}
+#complete .com-con #datos-prin #campana p strong {
+  color: rgb(9, 33, 139);
+}
+#complete .com-con #datos-prin #activa .dat-cit {
+  display: inline-block;
+  width: 30%;
+  margin: 0px 1.5%;
+}
+#complete .com-con #datos-prin #activa .dat-cit p, #complete .com-con #datos-prin #activa .dat-cit span {
+  font-weight: 700;
+}
+#complete .com-con #datos-prin #activa .dat-cit #dat {
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(111, 197, 255);
+  text-align: center;
+  color: #fff;
+  line-height: 40px;
+  font-size: 18px;
 }
 
 #footer {
