@@ -110,4 +110,8 @@ export class RegisterComponent implements OnInit {
 
     this.router.navigateByUrl('/complete');
   }
+
+  home():void{
+    window.location.reload();
+  }
 }

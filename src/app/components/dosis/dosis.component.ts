@@ -12,6 +12,7 @@ export class DosisComponent implements OnInit {
 
   public municDC: string = 'Registro!';
   public campanasId: number = 0;
+  public mostrarMC: boolean = false;
   public mostrarDC: boolean = false;
   public mostrarAC: boolean = true;
 
@@ -34,6 +35,12 @@ export class DosisComponent implements OnInit {
     this.dataService.mostrarMEvent$.subscribe(mostrarServ => {
       this.mostrarDC = mostrarServ;
     })
+
+    //  Recibir
+    this.dataService.mostrarBDEvent$.subscribe(mostrarServ => {
+      this.mostrarDC = mostrarServ;
+      console.log("Mostrar Dosis",this.mostrarDC)
+     })
   }
 
   getCampanas(){
@@ -51,7 +58,16 @@ export class DosisComponent implements OnInit {
     this.dataService.campanaEvent$.emit(this.campanasId);
     console.log("Campaña:", this.campanasId)
     this.mostrarDC = false;
+    this.mostrarAC = true;
     //  Dar
     this.dataService.mostrarDEvent$.emit(this.mostrarAC);
+   }
+
+   regresar():void{
+    this.mostrarDC = false;
+    this.mostrarAC = false;
+    console.log(this.mostrarDC)
+    //  Dar
+    this.dataService.mostrarBMEvent$.emit(this.mostrarMC);
    }
 }

@@ -12,6 +12,7 @@ export class ActivaComponent implements OnInit {
   public municDC: string = 'Registro!';
   public campaIdDC: number = 0;
   public campanasId: number = 0;
+  public mostrarDC: boolean = true;
   public mostrarAC: boolean = false;
   public mostrarRC: boolean = true;
 
@@ -62,6 +63,14 @@ export class ActivaComponent implements OnInit {
     this.mostrarAC = false;
     //  Dar
     this.dataService.mostrarAEvent$.emit(this.mostrarRC);
+   }
+
+   regresar():void{
+    this.mostrarAC = false;
+    this.mostrarRC = false;
+    console.log(this.mostrarDC)
+    //  Dar
+    this.dataService.mostrarBDEvent$.emit(this.mostrarDC);
    }
 
 }

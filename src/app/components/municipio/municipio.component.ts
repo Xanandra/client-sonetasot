@@ -11,6 +11,7 @@ export class MunicipioComponent implements OnInit {
   public municMC: string = '';
   public mostrarMC: boolean = true;
   public mostrarDC: boolean = true;
+  public mostrarHC: boolean = true;
 
   constructor(public dataService:DataService) { }
 
@@ -19,14 +20,26 @@ export class MunicipioComponent implements OnInit {
     this.dataService.mostrarHEvent$.subscribe(mostrarServ => {
       this.mostrarMC = mostrarServ;
      })
+     //  Recibir
+    this.dataService.mostrarBMEvent$.subscribe(mostrarServ => {
+      this.mostrarMC = mostrarServ;
+     })
   }
 
   getMunic(): void {
     console.log(this.municMC)
     this.dataService.municEvent$.emit(this.municMC);
     this.mostrarMC = true;
+    this.mostrarDC = true;
     //Dar
     this.dataService.mostrarMEvent$.emit(this.mostrarDC);
+   }
+
+   regresar():void{
+    this.mostrarMC = true;
+    this.mostrarDC = false;
+    //  Dar
+    this.dataService.mostrarBHEvent$.emit(this.mostrarHC);
    }
 
 }

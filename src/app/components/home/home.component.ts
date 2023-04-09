@@ -14,10 +14,11 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 export class HomeComponent implements OnInit {
   
   public curp: string = '';
+  public mostrar: boolean = true;
+  public mostrarHC: boolean = true;
   
   campanas: Array<any> = [];
 
-  mostrar: boolean = true;
   
   personas = [
     {edad: "18 y más", img: "./assets/image/per-18.png"},
@@ -33,6 +34,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCampanas();
+    //  Recibir
+    this.dataService.mostrarBHEvent$.subscribe(mostrarServ => {
+      this.mostrar = mostrarServ;
+     })
   }
 
   getCampanas(){
