@@ -7,7 +7,7 @@
         <div *ngFor="let usuario of Usuarios; last as isLast"  id="datos-prin">
             <div *ngIf="isLast">
                 <div id="person">
-                    <p>CURP: <span> {{usuario.curp}}</span></p>
+                    <p>CURP: <span> {{usuario.curp}}</span> | Folio: <span> {{usuario.id}}</span></p>
                     <span>{{usuario.nombre}}</span>
                 </div>
         
@@ -59,6 +59,5 @@
     </p>
 </div>
 
-<div *ngIf="flagCancel">
-    <app-cancelar></app-cancelar>
-</div>
+
+<app-cancelar></app-cancelar>

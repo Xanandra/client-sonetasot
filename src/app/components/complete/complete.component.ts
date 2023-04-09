@@ -11,8 +11,8 @@ import { DataService } from 'src/app/service/data.service';
 export class CompleteComponent implements OnInit {
 
   public curp: string = '';
-
-  flagCancel: boolean = false;
+  public id: number = 0;
+  public mostrarNC: boolean = true;
 
   Usuarios: Array<any> = []
   campanas: Array<any> = []
@@ -32,8 +32,6 @@ export class CompleteComponent implements OnInit {
     
     this.getUsuarios();
     this.getCampanas();
-    this.cancelCit();
- 
   }
 
   getUsuarios(){
@@ -50,14 +48,14 @@ export class CompleteComponent implements OnInit {
   }
 
   cancelCit():void{  
-
     this.Usuarios.forEach((usuario)=>{
       this.curp = usuario.curp;
+      this.id = usuario.id;
     })
-    
     this.dataService.curpCCEvent$.emit(this.curp);
+    this.dataService.idCCEvent$.emit(this.id);
     console.log("CURP Complete:",this.curp) 
-
-    this.flagCancel = true;
+    //  Dar
+    this.dataService.mostrarCEvent$.emit(this.mostrarNC);
   }
 }

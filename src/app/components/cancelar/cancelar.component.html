@@ -1,16 +1,23 @@
-<div id="cancel">
-    <div id="vent-emer">
+<div id="cancelar" *ngIf="mostrarNC">
+    <div id="background"></div>
+    <div id="vent-emer" class="{{mostrarV1}}">
+        <div id="cerrar" (click)="cerrar()">
+            <img src="../../../assets/image/cerrar.png" alt="">
+        </div>
         <h3>Quiero cancelar mi cita</h3>
         <form class="form"> 
-            <!-- (ngSubmit)="getCurp()" #userForm="ngForm"  -->
-            <input  type="text" class="input" id="curp" name="user_curp" #name="ngModel" [(ngModel)]="curp" required 
-            pattern="([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$" 
-            value="{{curpNC}}" readonly>
-            <input type="text" value="Folio de registro de tu cita" required>
-            <button  type="submit"class="button">Cancelar mi cita</button> 
-            <!-- [disabled]="userForm.invalid"  -->
-            <h5>Si no conoces tu CURP <a href="#">consulta aquí</a></h5>
+            <input  type="text" class="input" value="{{curp}}" readonly>
+            <input type="text" value="{{id}}" readonly>
+            <button  type="submit" class="button" (click)="eliRegis()">Cancelar mi cita</button> 
         </form>
-
+    </div>
+    <div id="vent-emer" class="{{mostrarV2}}">
+        <div id="center">
+            <h3><span>Tu cita ha sido cancelada</span></h3>
+            <p>Verifica si las jornadas vigentes son para tu segmento y marca de vacuna.
+                De lo contrario, infórmate en: <a href="#">gobjal.mx/VacunacionJalisco</a>
+            </p>
+            <button  type="submit" class="button" (click)="home()">Finalizar</button> 
+        </div>
     </div>
 </div>
