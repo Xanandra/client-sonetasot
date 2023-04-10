@@ -6,6 +6,9 @@ Versión Node JS 16.13.0 y Npm versión 8.1.0.
 
 
 ## Development server
+Antes de empezar se debe de tener ya corriendo la parte del servidor e instalada la API.
+
+Al entrar con una terminal en la carpeta del proyecto se debe ejecutar `Npm install` para instalar la paquetería de Node en el proyecto.
 
 Ejecuta `ng serve` en una terminal en el directorio de la ruta del proyecto. Navega a `http://localhost:4200/`. La aplicación se recarga automáticamente al guardar los archivos del código fuente.
 
