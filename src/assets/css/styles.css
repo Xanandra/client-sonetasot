@@ -90,7 +90,7 @@ button:hover {
   background-color: #ccc;
 }
 
-#button-reg, #button-reg2 {
+#button-reg, #button-reg2, #button-reg3 {
   border: none;
   border-radius: 10px;
   font-size: 20px;
@@ -103,6 +103,10 @@ button:hover {
 
 #button-reg2 {
   margin: 0px 10% 0px 16%;
+}
+
+#button-reg3 {
+  margin: 0px 8% 0px 16%;
 }
 
 #button-reg:hover {
