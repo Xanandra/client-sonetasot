@@ -66,36 +66,50 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
 
-     this.dataService.curpEvent$.subscribe(curpServ => {
+     this.getCurp();
+     this.getMunicipio();
+     this.getIdCamp();
+     this.getCampanas();
+
+     this.mostrar();
+
+    }
+  
+  getCurp():void{
+    this.dataService.curpEvent$.subscribe(curpServ => {
       this.curpRC = curpServ;
       console.log(' CURP Register: ', curpServ);
-     })
-
-     this.dataService.municEvent$.subscribe(municServ => {
+    })
+  }
+  
+  getMunicipio(){
+    this.dataService.municEvent$.subscribe(municServ => {
       this.municRC = municServ;
       console.log(' Municipio1: ', municServ);
-     })
-
-     this.dataService.campanaEvent$.subscribe(campaServ => {
+    })
+  }
+  
+  getIdCamp(){
+    this.dataService.campanaEvent$.subscribe(campaServ => {
       this.campaIdRC = campaServ;
       console.log(' Campaña5: ', campaServ);
-     })
+    })
+  }
+  
+  getCampanas(){
+    this.campanaService.getCampanas().subscribe((campana)=>{
+      return this.campanas = campana
+    })
+  }
 
-     this.getCampanas();
-    //  Recibir
+  mostrar():void{
     this.dataService.mostrarAEvent$.subscribe(mostrarServ => {
       this.mostrarRC = mostrarServ;
       if(this.mostrarRC){
         this.reg = 'reg-abl';
       }
-     })
-    }
-  
-    getCampanas(){
-      this.campanaService.getCampanas().subscribe((campana)=>{
-        return this.campanas = campana
-      })
-    }
+    })
+  }
 
   addUser():any {
     this.formUsers.value.curp = this.curpRC;

@@ -10,6 +10,7 @@ import { CampanaService } from 'src/app/service/campana.service';
 export class ActivaComponent implements OnInit {
 
   public municDC: string = 'Registro!';
+  public ver: string = 'div-dis';
   public campaIdDC: number = 0;
   public campanasId: number = 0;
   public mostrarDC: boolean = true;
@@ -58,11 +59,16 @@ export class ActivaComponent implements OnInit {
    }
 
   getCampa(): void {
-    this.dataService.campanaEvent$.emit(this.campanasId);
-    console.log("Campaña3:" + this.campanasId)
-    this.mostrarAC = false;
-    //  Dar
-    this.dataService.mostrarAEvent$.emit(this.mostrarRC);
+    if (this.campanasId != 0) {
+      this.dataService.campanaEvent$.emit(this.campanasId);
+      console.log("Campaña3:" + this.campanasId)
+      this.mostrarAC = false;
+      //  Dar
+      this.dataService.mostrarAEvent$.emit(this.mostrarRC);
+    }
+    else{
+      this.ver = "div-abl";
+    }
    }
 
    regresar():void{

@@ -17,14 +17,18 @@ export class UsuarioService {
   }
 
   addUser(usersData:Usuario):Observable<any>{
-      return this._http.post<any>(this.URL, usersData)
+      return this._http.post<any>(this.URL,usersData)
   }
 
   delUser(id:any):Observable<any>{
-    return this._http.delete<any>(this.URL + "?id=" +  id);
+    return this._http.delete<any>(this.URL+"?id="+id);
 }
 
-  actUser(usersData:Usuario):Observable<any>{
-    return this._http.put<any>(this.URL, usersData)
+  conUser(id:any):Observable<any>{
+    return this._http.get(this.URL+"?consultar="+id);
+}
+
+  actUser(id:any,usersData:Usuario):Observable<any>{
+    return this._http.put<any>(this.URL+"?id="+id,usersData)
   } 
 }

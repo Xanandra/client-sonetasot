@@ -13,7 +13,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { MunicipioComponent } from './components/municipio/municipio.component';
 import { DosisComponent } from './components/dosis/dosis.component';
 import { ActivaComponent } from './components/activa/activa.component';
-import { CancelarComponent } from './components/cancelar/cancelar.component'
+import { CancelarComponent } from './components/cancelar/cancelar.component';
+import { ActualizarComponent } from './components/actualizar/actualizar.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CancelarComponent } from './components/cancelar/cancelar.component'
     MunicipioComponent,
     DosisComponent,
     ActivaComponent,
-    CancelarComponent
+    CancelarComponent,
+    ActualizarComponent
   ],
   imports: [
     BrowserModule,

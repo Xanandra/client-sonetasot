@@ -11,6 +11,7 @@ import { CampanaService } from 'src/app/service/campana.service';
 export class DosisComponent implements OnInit {
 
   public municDC: string = 'Registro!';
+  public ver: string = 'div-dis';
   public campanasId: number = 0;
   public mostrarMC: boolean = false;
   public mostrarDC: boolean = false;
@@ -51,16 +52,21 @@ export class DosisComponent implements OnInit {
 
   getCampaId(cId: number): void {
     this.campanasId = cId;
-    console.log("Campaña:", this.campanasId)
+    console.log("CampañaGCI:", this.campanasId)
    }
 
   getCampa(): void {
-    this.dataService.campanaEvent$.emit(this.campanasId);
-    console.log("Campaña:", this.campanasId)
-    this.mostrarDC = false;
-    this.mostrarAC = true;
-    //  Dar
-    this.dataService.mostrarDEvent$.emit(this.mostrarAC);
+    if (this.campanasId != 0) {
+      this.dataService.campanaEvent$.emit(this.campanasId);
+      console.log("CampañaGC:", this.campanasId)
+      this.mostrarDC = false;
+      this.mostrarAC = true;
+      //  Dar
+      this.dataService.mostrarDEvent$.emit(this.mostrarAC);
+    }
+    else{
+      this.ver = "div-abl";
+    }
    }
 
    regresar():void{

@@ -6,15 +6,18 @@ import { RegisterComponent } from './components/register/register.component';
 import { MunicipioComponent } from './components/municipio/municipio.component';
 import { DosisComponent } from './components/dosis/dosis.component';
 import { CancelarComponent } from './components/cancelar/cancelar.component';
+import { ActualizarComponent } from './components/actualizar/actualizar.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full'},
   {path: '', component: HomeComponent},
   {path: 'complete', component: CompleteComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'register', component: RegisterComponent},
   {path: 'municipio', component: MunicipioComponent},
   {path: 'dosis', component: DosisComponent},
-  {path: 'cancelar', component: CancelarComponent}
+  {path: 'cancelar', component: CancelarComponent},
+  {path: 'actualizar/:id', component: ActualizarComponent}
 ];
 
 @NgModule({

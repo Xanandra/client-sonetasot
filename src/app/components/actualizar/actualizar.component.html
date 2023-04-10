@@ -1,7 +1,6 @@
 <div id="registro">
     <div class="{{reg}}">
         <div id="head-reg">
-            <div id="curp-rc"><h5>CURP: {{dataService.curpEvent$ | async}}</h5></div>
         
             <div id="campana">
                 <div *ngFor="let campana of campanas" id="activa">
@@ -20,14 +19,14 @@
         </div>
         <div class="clearfix"></div>
         
-        <h1>Registro para Vacunación</h1>
+        <h1>Actualización de Datos</h1>
         
         <p>
-            Es importante verifiques la información que se presenta a continuación, corresponde a la CURP que estas 
+            Esta curp ya está registrada. Es importante verifiques la información que se presenta a continuación, corresponde a la CURP que estas 
             solicitando y que coincide con los datos proporcionados
         </p>
         
-        <form [formGroup]="formUsers" (ngSubmit)="addUser()" class="formulario">
+        <form [formGroup]="formUsers" (ngSubmit)="actUser()" class="formulario">
             <table>
                 <div>
                     <tr>
@@ -238,7 +237,20 @@
             </table>
              
             <a (click)="home()" id="button-reg">Cancelar</a>
-            <button class="button" type="submit" [disabled]="formUsers.invalid"> Continuar </button>
+            <button class="button" type="submit" [disabled]="formUsers.invalid"> Actualizar </button>
         </form>
+
+        <div id="cancelar" *ngIf="mostrarV">
+            <div id="background"></div>
+            <div id="vent-emer">
+                <div id="center">
+                    <h3><span>Tu datos han sido actualizados</span></h3>
+                    <p>No olvides la fecha y hora de tu cita, es importante para ser atendido,
+                        infórmate en: <a href="#">gobjal.mx/VacunacionJalisco</a>
+                    </p>
+                    <button  type="submit" class="button" (click)="home()">Finalizar</button> 
+                </div>
+            </div>
+        </div>
     </div>
 </div>
