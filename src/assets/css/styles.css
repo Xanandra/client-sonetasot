@@ -64,6 +64,10 @@ p a {
   font-weight: bold;
 }
 
+small {
+  color: #b90000;
+}
+
 button {
   border: none;
   border-radius: 10px;
@@ -342,9 +346,6 @@ button:hover {
   border: none;
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.031372549);
   border-radius: 0.3em;
-}
-#registro .formulario small {
-  color: #b90000;
 }
 #registro .button, #registro .button-dis {
   margin: 0px 12%;
