@@ -11,13 +11,13 @@
     <div *ngFor="let campana of campanas"  id="num-dosis">
         <div *ngIf="campana.municipio == municDC && campana.dosis">
             <div *ngIf="campana.dosis == 'Primera'" class="abl-dosis"  (click)="getCampaId(campana.id)">
-                <img src="#" alt="1">
+                <img src="../../../assets/image/numero-uno.png" alt="1">
                 <h1>{{campana.dosis}} dosis</h1>
                 <h6>Disponible</h6>
             </div>
     
             <div *ngIf="campana.dosis != 'Primera'" class="dis-dosis">
-                <img src="#" alt="1">
+                <img src="../../../assets/image/numero-uno.png" alt="1">
                 <h1>Primera dosis</h1>
                 <h6>No disponible por el momento</h6>
             </div>
@@ -25,13 +25,13 @@
 
         <div *ngIf="campana.municipio == municDC && campana.dosis">
             <div *ngIf="campana.dosis == 'Segunda'" class="abl-dosis" (click)="getCampaId(campana.id)">
-                <img src="#" alt="1">
+                <img src="../../../assets/image/numero-2.png" alt="1">
                 <h1>{{campana.dosis}} dosis</h1>
                 <h6>Disponible</h6>
             </div>
     
             <div *ngIf="campana.dosis != 'Segunda'" class="dis-dosis">
-                <img src="#" alt="1">
+                <img src="../../../assets/image/numero-2.png" alt="1">
                 <h1>Segunda dosis</h1>
                 <h6>No disponible por el momento</h6>
             </div>

@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
 
    public curpRC: string = '';
    public municRC: string = '';
+   public eFeder: string = 'Jalisco';
    public campaIdRC: number = 0;
    public mostrarRC: boolean = false;
    public reg: string = 'reg-dis';

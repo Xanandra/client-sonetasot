@@ -90,15 +90,19 @@ button:hover {
   background-color: #ccc;
 }
 
-#button-reg {
+#button-reg, #button-reg2 {
   border: none;
   border-radius: 10px;
   font-size: 20px;
   background-color: #ccc;
   color: white;
-  margin: 0px 12%;
+  margin: 0px 20% 0px 16%;
   padding: 2% 9%;
   transition: 300ms all;
+}
+
+#button-reg2 {
+  margin: 0px 10% 0px 16%;
 }
 
 #button-reg:hover {
@@ -261,13 +265,16 @@ button:hover {
 .content #inicio #num-dosis .abl-dosis, .content #inicio #num-dosis .dis-dosis {
   width: 350px;
   max-width: 100%;
-  margin: 5%;
+  margin: 5% 60%;
   padding-bottom: 3%;
   border: 2px #ccc solid;
   border-radius: 30px;
   text-align: center;
   cursor: pointer;
   transition: 300ms all;
+}
+.content #inicio #num-dosis .dis-dosis {
+  margin: 5% 30%;
 }
 .content #inicio #num-dosis .abl-dosis:hover, .content #inicio #num-dosis .dis-dosis:hover {
   transform: scale(1.02);
